@@ -62,9 +62,8 @@
 				912D55262C0FAFBA004DA582 /* WBAppApp.swift */,
 				912D55282C0FAFBA004DA582 /* ContentView.swift */,
 				917FE3922C1194D700A8EA12 /* ContentView_Body.swift */,
-				917FE3942C11A71000A8EA12 /* Font+Extensions.swift */,
-				917FE3982C11A80F00A8EA12 /* Color+Extensions.swift */,
 				917FE3962C11A7C800A8EA12 /* ButtonStyles.swift */,
+				917FE39C2C11E55700A8EA12 /* Extensions */,
 				912D552A2C0FAFBC004DA582 /* Assets.xcassets */,
 				912D552C2C0FAFBC004DA582 /* Preview Content */,
 			);
@@ -77,6 +76,15 @@
 				912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		917FE39C2C11E55700A8EA12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				917FE3942C11A71000A8EA12 /* Font+Extensions.swift */,
+				917FE3982C11A80F00A8EA12 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
