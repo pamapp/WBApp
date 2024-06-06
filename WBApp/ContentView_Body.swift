@@ -13,34 +13,35 @@ struct ContentView_Body: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 0) {
+            VStack(alignment: .center) {
                 Spacer()
                 
-                illustrationImage
-                    .padding(.bottom, adaptivePadding(42, geometry: geometry))
+                VStack(spacing: adaptivePadding(45, geometry: geometry)) {
+                    illustrationImage
+                    
+                    headlineText
+                        .padding(.horizontal, 48)
+                }
+
+                Spacer()
+                Spacer()
                 
-                headlineText
-                    .padding(.bottom, adaptivePadding(158, geometry: geometry))
-                    .padding(.leading, adaptivePadding(47, geometry: geometry))
-                    .padding(.trailing, adaptivePadding(48, geometry: geometry))
-                
-//                Spacer()
-                
-                userAgreementButton
-                    .padding(.bottom, adaptivePadding(18, geometry: geometry))
-                
-                startChatButton
-                    .padding(.horizontal, adaptivePadding(24, geometry: geometry))
-                    .padding(.bottom, adaptivePadding(20, geometry: geometry))
-                    .sheet(isPresented: $isStartSheetPresented) {
-                        Button(action: { self.isStartSheetPresented.toggle() }) {
-                            Text("Dismiss")
-                                .font(.bodyText1())
-                                .foregroundColor(Color.theme.active)
+                VStack(spacing: adaptivePadding(18, geometry: geometry)) {
+                    userAgreementButton
+
+                    startChatButton
+                        .padding(.horizontal, adaptivePadding(24, geometry: geometry))
+                        .padding(.bottom, adaptivePadding(20, geometry: geometry))
+                        .sheet(isPresented: $isStartSheetPresented) {
+                            Button(action: { self.isStartSheetPresented.toggle() }) {
+                                Text("Dismiss")
+                                    .font(.bodyText1())
+                                    .foregroundColor(Color.theme.active)
+                            }
                         }
-                    }
+                }
             }
-            .background(Color.theme.backgroundColor.ignoresSafeArea())
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
     
@@ -50,6 +51,7 @@ struct ContentView_Body: View {
     
     private var headlineText: some View {
         Text("Общайтесь с друзьями и близкими легко")
+            .frame(width: 279)
             .font(.headline2())
             .multilineTextAlignment(.center)
             .lineLimit(2)
