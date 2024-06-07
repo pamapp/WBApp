@@ -13,40 +13,44 @@ struct ContentView_Body: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .center) {
+            VStack(alignment: .center, spacing: 0) {
+                Spacer()
+                    .frame(height: geometry.safeAreaInsets.top + adaptivePadding(45, geometry: geometry))
+
+                illustrationImage
+                    .frame(minWidth: 262)
+                    .frame(width: geometry.size.width - 112)
+                    .padding(.bottom, adaptivePadding(45, geometry: geometry))
+                
+                headlineText
+                    .padding(.horizontal, adaptivePadding(48, geometry: geometry))
+                
                 Spacer()
                 
-                VStack(spacing: adaptivePadding(45, geometry: geometry)) {
-                    illustrationImage
-                    
-                    headlineText
-                        .padding(.horizontal, 48)
-                }
-
-                Spacer()
-                Spacer()
+                userAgreementButton
+                    .padding(.bottom, adaptivePadding(18, geometry: geometry))
                 
-                VStack(spacing: adaptivePadding(18, geometry: geometry)) {
-                    userAgreementButton
-
-                    startChatButton
-                        .padding(.horizontal, adaptivePadding(24, geometry: geometry))
-                        .padding(.bottom, adaptivePadding(20, geometry: geometry))
-                        .sheet(isPresented: $isStartSheetPresented) {
-                            Button(action: { self.isStartSheetPresented.toggle() }) {
-                                Text("Dismiss")
-                                    .font(.bodyText1())
-                                    .foregroundColor(Color.theme.active)
-                            }
-                        }
-                }
+                startChatButton
+                    .padding(.horizontal, adaptivePadding(24, geometry: geometry))
+                    .padding(.bottom, adaptivePadding(20, geometry: geometry))
+                    .sheet(isPresented: $isStartSheetPresented) {
+                        dismissButton
+                    }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
+            .background(Color.theme.backgroundColor)
         }
     }
     
+    private func adaptivePadding(_ value: CGFloat, geometry: GeometryProxy) -> CGFloat {
+        return value * geometry.size.height / 812 // 812 - высота экрана в макете
+    }
+}
+
+extension ContentView_Body {
     private var illustrationImage: some View {
         Image("Illustration")
+            .resizable()
+            .scaledToFit()
     }
     
     private var headlineText: some View {
@@ -79,23 +83,15 @@ struct ContentView_Body: View {
         .buttonStyle(PrimaryButtonStyle())
     }
     
-    private func adaptivePadding(_ basePadding: CGFloat, geometry: GeometryProxy) -> CGFloat {
-        let isLandscape = geometry.size.width > geometry.size.height
-        return isLandscape ? basePadding * (geometry.size.height / 812) : basePadding
+    private var dismissButton: some View {
+        Button(action: { self.isStartSheetPresented.toggle() }) {
+            Text("Dismiss")
+                .font(.bodyText1())
+                .foregroundColor(Color.theme.active)
+        }
     }
 }
 
 #Preview {
     ContentView_Body()
 }
-
-
-//Drafts: instead sheet
-
-//.fullScreenCover(isPresented: $isStartSheetPresented, content: {
-//    Button(action: { self.isStartSheetPresented.toggle() }) {
-//        Text("Dismiss")
-//            .font(.bodyText1())
-//            .foregroundColor(Color.theme.active)
-//    }
-//})
