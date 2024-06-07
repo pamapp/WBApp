@@ -10,6 +10,7 @@ import SwiftUI
 struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .frame(height: 52)
             .background(
                 Capsule()
                     .foregroundColor(configuration.isPressed ? Color.dark : Color.default)

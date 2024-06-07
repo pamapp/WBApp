@@ -7,32 +7,29 @@
 
 import SwiftUI
 
-struct ContentView_Body: View {
+struct WalkthroughView: View {
     @State private var isUserAgreementPresented: Bool = false
     @State private var isStartSheetPresented: Bool = false
     
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { geo in
             VStack(alignment: .center, spacing: 0) {
                 Spacer()
-                    .frame(height: geometry.safeAreaInsets.top + adaptivePadding(45, geometry: geometry))
+                    .frame(height: geo.safeAreaInsets.top + geo.adaptivePadding(45))
 
-                illustrationImage
-                    .frame(minWidth: 262)
-                    .frame(width: geometry.size.width - 112)
-                    .padding(.bottom, adaptivePadding(45, geometry: geometry))
+                illustrationView
+                    .padding(.bottom, geo.adaptivePadding(45))
                 
                 headlineText
-                    .padding(.horizontal, adaptivePadding(48, geometry: geometry))
                 
                 Spacer()
                 
                 userAgreementButton
-                    .padding(.bottom, adaptivePadding(18, geometry: geometry))
+                    .padding(.bottom, geo.adaptivePadding(18))
                 
                 startChatButton
-                    .padding(.horizontal, adaptivePadding(24, geometry: geometry))
-                    .padding(.bottom, adaptivePadding(20, geometry: geometry))
+                    .padding(.horizontal, geo.adaptivePadding(24))
+                    .padding(.bottom, geo.adaptivePadding(20))
                     .sheet(isPresented: $isStartSheetPresented) {
                         dismissButton
                     }
@@ -40,26 +37,22 @@ struct ContentView_Body: View {
             .background(Color.theme.backgroundColor)
         }
     }
-    
-    private func adaptivePadding(_ value: CGFloat, geometry: GeometryProxy) -> CGFloat {
-        return value * geometry.size.height / 812 // 812 - высота экрана в макете
-    }
 }
 
-extension ContentView_Body {
-    private var illustrationImage: some View {
+extension WalkthroughView {
+    private var illustrationView: some View {
         Image("Illustration")
             .resizable()
             .scaledToFit()
+            .frame(maxWidth: 262)
     }
     
     private var headlineText: some View {
         Text("Общайтесь с друзьями и близкими легко")
-            .frame(width: 279)
             .font(.headline2())
-            .multilineTextAlignment(.center)
-            .lineLimit(2)
             .foregroundColor(Color.theme.active)
+            .multilineTextAlignment(.center)
+            .frame(width: 279)
     }
     
     private var userAgreementButton: some View {
@@ -67,8 +60,8 @@ extension ContentView_Body {
             Text("Пользовательское соглашение")
                 .font(.bodyText1())
                 .foregroundColor(Color.theme.active)
+                .frame(height: 24)
         }
-        .frame(height: 24)
         .buttonStyle(.plain)
     }
     
@@ -78,7 +71,6 @@ extension ContentView_Body {
                 .font(.subheadline2())
                 .foregroundColor(Color.theme.offWhite)
                 .frame(maxWidth: .infinity)
-                .frame(height: 52)
         }
         .buttonStyle(PrimaryButtonStyle())
     }
@@ -93,5 +85,5 @@ extension ContentView_Body {
 }
 
 #Preview {
-    ContentView_Body()
+    WalkthroughView()
 }
