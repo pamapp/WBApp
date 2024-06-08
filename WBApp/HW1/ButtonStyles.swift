@@ -13,7 +13,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             .frame(height: 52)
             .background(
                 Capsule()
-                    .foregroundColor(configuration.isPressed ? Color.dark : Color.default)
+                    .foregroundColor(configuration.isPressed ? Color.theme.darkColor : Color.theme.defaultColor)
             )
     }
 }
