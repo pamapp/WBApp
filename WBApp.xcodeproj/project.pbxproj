@@ -63,8 +63,7 @@
 			children = (
 				912D55262C0FAFBA004DA582 /* WBAppApp.swift */,
 				912D55282C0FAFBA004DA582 /* ContentView.swift */,
-				917FE3922C1194D700A8EA12 /* WalkthroughView.swift */,
-				917FE3962C11A7C800A8EA12 /* ButtonStyles.swift */,
+				9169819D2C145B59005FFEDD /* HW1 */,
 				917FE39C2C11E55700A8EA12 /* Extensions */,
 				912D552A2C0FAFBC004DA582 /* Assets.xcassets */,
 				912D552C2C0FAFBC004DA582 /* Preview Content */,
@@ -78,6 +77,15 @@
 				912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9169819D2C145B59005FFEDD /* HW1 */ = {
+			isa = PBXGroup;
+			children = (
+				917FE3922C1194D700A8EA12 /* WalkthroughView.swift */,
+				917FE3962C11A7C800A8EA12 /* ButtonStyles.swift */,
+			);
+			path = HW1;
 			sourceTree = "<group>";
 		};
 		917FE39C2C11E55700A8EA12 /* Extensions */ = {
