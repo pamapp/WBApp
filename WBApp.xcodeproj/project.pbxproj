@@ -11,11 +11,6 @@
 		912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55282C0FAFBA004DA582 /* ContentView.swift */; };
 		912D552B2C0FAFBC004DA582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552A2C0FAFBC004DA582 /* Assets.xcassets */; };
 		912D552E2C0FAFBC004DA582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */; };
-		917FE3932C1194D700A8EA12 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FE3922C1194D700A8EA12 /* WalkthroughView.swift */; };
-		917FE3952C11A71000A8EA12 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FE3942C11A71000A8EA12 /* Font+Extensions.swift */; };
-		917FE3972C11A7C800A8EA12 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FE3962C11A7C800A8EA12 /* ButtonStyles.swift */; };
-		917FE3992C11A80F00A8EA12 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FE3982C11A80F00A8EA12 /* Color+Extensions.swift */; };
-		919439C22C132A2C005EBA0E /* GeometryProxy+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919439C12C132A2C005EBA0E /* GeometryProxy+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +19,6 @@
 		912D55282C0FAFBA004DA582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		912D552A2C0FAFBC004DA582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		917FE3922C1194D700A8EA12 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
-		917FE3942C11A71000A8EA12 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
-		917FE3962C11A7C800A8EA12 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
-		917FE3982C11A80F00A8EA12 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
-		919439C12C132A2C005EBA0E /* GeometryProxy+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeometryProxy+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +53,6 @@
 			children = (
 				912D55262C0FAFBA004DA582 /* WBAppApp.swift */,
 				912D55282C0FAFBA004DA582 /* ContentView.swift */,
-				9169819D2C145B59005FFEDD /* HW1 */,
-				917FE39C2C11E55700A8EA12 /* Extensions */,
 				912D552A2C0FAFBC004DA582 /* Assets.xcassets */,
 				912D552C2C0FAFBC004DA582 /* Preview Content */,
 			);
@@ -77,25 +65,6 @@
 				912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		9169819D2C145B59005FFEDD /* HW1 */ = {
-			isa = PBXGroup;
-			children = (
-				917FE3922C1194D700A8EA12 /* WalkthroughView.swift */,
-				917FE3962C11A7C800A8EA12 /* ButtonStyles.swift */,
-			);
-			path = HW1;
-			sourceTree = "<group>";
-		};
-		917FE39C2C11E55700A8EA12 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				917FE3942C11A71000A8EA12 /* Font+Extensions.swift */,
-				917FE3982C11A80F00A8EA12 /* Color+Extensions.swift */,
-				919439C12C132A2C005EBA0E /* GeometryProxy+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,11 +139,6 @@
 			files = (
 				912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */,
 				912D55272C0FAFBA004DA582 /* WBAppApp.swift in Sources */,
-				917FE3952C11A71000A8EA12 /* Font+Extensions.swift in Sources */,
-				919439C22C132A2C005EBA0E /* GeometryProxy+Extensions.swift in Sources */,
-				917FE3972C11A7C800A8EA12 /* ButtonStyles.swift in Sources */,
-				917FE3932C1194D700A8EA12 /* WalkthroughView.swift in Sources */,
-				917FE3992C11A80F00A8EA12 /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
