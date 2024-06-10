@@ -49,7 +49,7 @@ extension WalkthroughView {
     
     private var headlineText: some View {
         Text("Общайтесь с друзьями и близкими легко")
-            .font(.headline2())
+            .font(.heading2())
             .foregroundColor(Color.theme.active)
             .multilineTextAlignment(.center)
             .frame(width: 279)
@@ -68,7 +68,7 @@ extension WalkthroughView {
     private var startChatButton: some View {
         Button(action: { self.isStartSheetPresented.toggle() }) {
             Text("Начать общаться")
-                .font(.subheadline2())
+                .font(.subheading2())
                 .foregroundColor(Color.theme.offWhite)
                 .frame(maxWidth: .infinity)
         }

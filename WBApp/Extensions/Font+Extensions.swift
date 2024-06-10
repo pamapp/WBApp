@@ -8,19 +8,19 @@
 import SwiftUI
 
 extension Font {
-    static func headline1(_ size: CGFloat = 32) -> Font {
+    static func heading1(_ size: CGFloat = 32) -> Font {
         .system(size: size, weight: .bold, design: .none)
     }
     
-    static func headline2(_ size: CGFloat = 24) -> Font {
+    static func heading2(_ size: CGFloat = 24) -> Font {
         .system(size: size, weight: .bold, design: .none)
     }
     
-    static func subheadline1(_ size: CGFloat = 18) -> Font {
+    static func subheading1(_ size: CGFloat = 18) -> Font {
         .system(size: size, weight: .semibold, design: .none)
     }
     
-    static func subheadline2(_ size: CGFloat = 16) -> Font {
+    static func subheading2(_ size: CGFloat = 16) -> Font {
         .system(size: size, weight: .semibold, design: .none)
     }
     
