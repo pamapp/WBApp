@@ -15,21 +15,21 @@ struct WalkthroughView: View {
         GeometryReader { geo in
             VStack(alignment: .center, spacing: 0) {
                 Spacer()
-                    .frame(height: geo.safeAreaInsets.top + geo.adaptivePadding(45))
+                    .frame(height: geo.safeAreaInsets.top + geo.adaptiveVerticalPadding(45))
 
                 illustrationView
-                    .padding(.bottom, geo.adaptivePadding(45))
+                    .padding(.bottom, geo.adaptiveVerticalPadding(45))
                 
                 headlineText
                 
                 Spacer()
                 
                 userAgreementButton
-                    .padding(.bottom, geo.adaptivePadding(18))
+                    .padding(.bottom, geo.adaptiveVerticalPadding(18))
                 
                 startChatButton
-                    .padding(.horizontal, geo.adaptivePadding(24))
-                    .padding(.bottom, geo.adaptivePadding(20))
+                    .padding(.horizontal, geo.adaptiveVerticalPadding(24))
+                    .padding(.bottom, geo.adaptiveVerticalPadding(20))
                     .sheet(isPresented: $isStartSheetPresented) {
                         dismissButton
                     }

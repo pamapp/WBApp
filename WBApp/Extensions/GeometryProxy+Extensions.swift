@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension GeometryProxy {
-    func adaptivePadding(_ value: CGFloat, relativeTo referenceHeight: CGFloat = 812) -> CGFloat {
+    func adaptiveVerticalPadding(_ value: CGFloat, relativeTo referenceHeight: CGFloat = 812) -> CGFloat {
         value * size.height / referenceHeight
     }
 }
