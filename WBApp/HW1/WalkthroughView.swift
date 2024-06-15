@@ -41,14 +41,14 @@ struct WalkthroughView: View {
 
 extension WalkthroughView {
     private var illustrationView: some View {
-        Image("Illustration")
+        Image(UI.Images.illustration)
             .resizable()
             .scaledToFit()
             .frame(maxWidth: 262)
     }
     
     private var headlineText: some View {
-        Text("Общайтесь с друзьями и близкими легко")
+        Text(UI.Strings.walkthrought_text)
             .font(.heading2())
             .foregroundColor(Color.theme.active)
             .multilineTextAlignment(.center)
@@ -57,7 +57,7 @@ extension WalkthroughView {
     
     private var userAgreementButton: some View {
         Button(action: { self.isUserAgreementPresented.toggle() }) {
-            Text("Пользовательское соглашение")
+            Text(UI.Strings.userAgreement)
                 .font(.bodyText1())
                 .foregroundColor(Color.theme.active)
                 .frame(height: 24)
@@ -67,7 +67,7 @@ extension WalkthroughView {
     
     private var startChatButton: some View {
         Button(action: { self.isStartSheetPresented.toggle() }) {
-            Text("Начать общаться")
+            Text(UI.Strings.startChating)
                 .font(.subheading2())
                 .foregroundColor(Color.theme.offWhite)
                 .frame(maxWidth: .infinity)
@@ -77,13 +77,12 @@ extension WalkthroughView {
     
     private var dismissButton: some View {
         Button(action: { self.isStartSheetPresented.toggle() }) {
-            Text("Dismiss")
+            Text(UI.Strings.dismiss)
                 .font(.bodyText1())
                 .foregroundColor(Color.theme.active)
         }
     }
 }
-
 
 #Preview {
     WalkthroughView()
