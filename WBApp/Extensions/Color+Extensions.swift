@@ -45,5 +45,12 @@ extension LinearGradient {
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
+    
+    static var clearGradient = LinearGradient(
+        gradient: Gradient(colors: [Color.clear]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
 }
 
