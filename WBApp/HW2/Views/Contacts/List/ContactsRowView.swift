@@ -16,7 +16,7 @@ extension ContactRowView {
 }
 
 struct ContactRowView: View {
-    let contact: Contact
+    @State var contact: Contact
     
     var body: some View {
         HStack(spacing: 12) {

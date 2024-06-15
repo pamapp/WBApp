@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-extension Constants {
-    static let contactsViewOffset: CGFloat = screenWidth * 0.3
-    static let dragThreshold: CGFloat = 70.0
+extension ContactsView {
+    private enum Constants {
+        static let contactsViewOffset: CGFloat = UI.screenWidth * 0.3
+        static let dragThreshold: CGFloat = 70.0
+    }
 }
 
 struct ContactsView: View {
@@ -27,14 +29,14 @@ struct ContactsView: View {
             if let contact = selectedContact {
                 ContactDetailView(contact: contact, onBack: hideContactDetail)
                     .offset(x: offsets.detailView)
-                    .zIndex(1)
                     .transition(.move(edge: .trailing))
                     .gesture(dragGesture)
                     .onChange(of: selectedContact) { newValue in
                         if newValue == nil {
-                            offsets.detailView = Constants.screenWidth
+                            offsets.detailView = UI.screenWidth
                         }
                     }
+                    .zIndex(1)
             }
         }
     }
@@ -61,7 +63,7 @@ struct ContactsView: View {
                 let translation = value.translation.width
                 if translation > 0 {
                     offsets.detailView = translation
-                    let progress = min(max(offsets.detailView / Constants.screenWidth, 0), 1)
+                    let progress = min(max(offsets.detailView / UI.screenWidth, 0), 1)
                     offsets.contactsView = -Constants.contactsViewOffset + progress * Constants.contactsViewOffset
                 }
             }

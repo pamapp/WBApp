@@ -7,14 +7,9 @@
 
 import SwiftUI
 
-extension ContactsView {
-    private enum Constants {
-        
-    }
-}
-
 struct ContactsListView: View {
     @EnvironmentObject var router: Router
+   
     @State private var searchText = ""
     
     let onContactTap: (Contact) -> Void

@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+extension SocialLinksView {
+    private enum Constants {
+        static let linksSpacing: CGFloat = 12
+        static let linkStrokeWidth: CGFloat = 1.6
+        static let linkHeight: CGFloat = 40
+        static let linkImageSize: CGFloat = 20
+    }
+}
+
 struct SocialLinksView: View {
     let links: [SocialLink]
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Constants.linksSpacing) {
             ForEach(links, id: \.self) { link in
                 socialLinkButton(link: link)
             }
@@ -21,12 +30,12 @@ struct SocialLinksView: View {
     private func socialLinkButton(link: SocialLink) -> some View {
         Link(destination: link.url) {
             Capsule()
-                .stroke(Color.theme.defaultColor, lineWidth: 1.6)
-                .frame(height: 40)
+                .stroke(Color.theme.defaultColor, lineWidth: Constants.linkStrokeWidth)
+                .frame(height: Constants.linkHeight)
                 .overlay(
                     link.media.image
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .frame(width: Constants.linkImageSize, height: Constants.linkImageSize)
                 )
         }
     }

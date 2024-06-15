@@ -73,12 +73,13 @@ extension TabBarView {
                 router.navigate(to: route)
             }
         }) {
-            if router.baseRoute == route {
+            switch (router.baseRoute == route) {
+            case true:
                 Text(title)
                     .font(.bodyText1())
                     .foregroundColor(Color.theme.active)
                     .transition(.scale)
-            } else {
+            case false:
                 Image(name)
                     .resizable()
                     .aspectRatio(contentMode: .fit)

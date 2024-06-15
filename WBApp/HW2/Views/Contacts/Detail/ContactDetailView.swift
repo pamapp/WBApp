@@ -7,12 +7,18 @@
 
 import SwiftUI
 
-//extension ContactsView {
-//    private enum Constants {
-//        static let circle
-//    }
-//}
-
+extension ContactDetailView {
+    private enum Constants {
+        static let circleSize: CGFloat = 200
+        static let iconHeight: CGFloat = 90
+        
+        static let imageTopPadding: CGFloat = 46
+        static let nameTopPadding: CGFloat = 20
+        static let phoneTopPadding: CGFloat = 4
+        static let linksTopPadding: CGFloat = 40
+        static let linksHorizontalPadding: CGFloat = 40
+    }
+}
 
 struct ContactDetailView: View {
     let contact: Contact
@@ -23,24 +29,18 @@ struct ContactDetailView: View {
             GeometryReader { geo in
                 VStack(spacing: 0) {
                     contactImageView
-                        .padding(.top, geo.adaptiveVerticalPadding(46))
+                        .padding(.top, geo.adaptiveVerticalPadding(Constants.imageTopPadding))
 
-                    Text(contact.name)
-                        .font(.subheading1())
-                        .foregroundColor(Color.theme.active)
-                        .padding(.top, geo.adaptiveVerticalPadding(20))
+                    contactNameView
+                        .padding(.top, geo.adaptiveVerticalPadding(Constants.nameTopPadding))
                     
-                    if let phone = contact.phoneNumber {
-                        Text(phone)
-                            .font(.subheading2())
-                            .foregroundColor(Color.theme.disabled)
-                            .padding(.top, geo.adaptiveVerticalPadding(4))
-                    }
+                    contactPhoneView
+                        .padding(.top, geo.adaptiveVerticalPadding(Constants.phoneTopPadding))
                     
                     SocialLinksView(links: contact.links)
-                        .padding(.horizontal, 26)
-                        .padding(.top, geo.adaptiveVerticalPadding(40))
-                    
+                        .padding(.top, geo.adaptiveVerticalPadding(Constants.linksTopPadding))
+                        .padding(.horizontal, Constants.linksHorizontalPadding)
+
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -54,6 +54,23 @@ struct ContactDetailView: View {
             )
         }
     }
+}
+
+extension ContactDetailView {
+    private var contactNameView: some View {
+        Text(contact.name)
+            .font(.subheading1())
+            .foregroundColor(Color.theme.active)
+    }
+    
+    @ViewBuilder
+    private var contactPhoneView: some View {
+        if let phone = contact.phoneNumber {
+            Text(phone)
+                .font(.subheading2())
+                .foregroundColor(Color.theme.disabled)
+        }
+    }
     
     @ViewBuilder
     private var contactImageView: some View {
@@ -61,34 +78,18 @@ struct ContactDetailView: View {
         case .some(let imageName):
             Image(imageName)
                 .resizable()
-                .frame(width: 200, height: 200)
+                .frame(width: Constants.circleSize, height: Constants.circleSize)
                 .clipShape(Circle())
-                .foregroundStyle(Color.theme.offWhite)
         case nil:
             Circle()
-                .frame(width: 200, height: 200)
+                .frame(width: Constants.circleSize, height: Constants.circleSize)
                 .foregroundStyle(Color.theme.offWhite)
                 .overlay(
                     Image(UI.Icons.avatar)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 90)
+                        .frame(height: Constants.iconHeight)
                 )
         }
     }
-}
-
-
-
-#Preview {
-    ContactDetailView(contact: .init(name: "Петя",
-                                     imageName: "petya",
-                                     lastSeen: Date(),
-                                     isStory: false,
-                                     links: [
-                                         SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                                         SocialLink(media: .instagram, url: "https://instagram.com"),
-                                         SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                                         SocialLink(media: .twitter, url: "https://twitter.com")
-                                     ], phoneNumber: "+79284830235"), onBack: {})
 }
