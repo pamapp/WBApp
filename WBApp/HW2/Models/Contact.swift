@@ -138,16 +138,5 @@ extension Contact {
                    SocialLink(media: .twitter, url: "https://twitter.com"),
                ],
                phoneNumber: "+7 999 999-99-99"),
-         .init(name: "Анастасия Иванова",
-               imageName: "nastya",
-               lastSeen: Date(timeIntervalSinceNow: -24 * 3600),
-               isStory: false,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-                   SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                   SocialLink(media: .twitter, url: "https://twitter.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
     ]
 }
