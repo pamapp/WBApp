@@ -11,8 +11,8 @@ extension ContactAvatarView {
     private enum Constants {
         static let avatarSize: CGFloat = 48
         static let imageSize: CGFloat = 54
-        static let cornerRadius: CGFloat = 16
-        static let borderWidth: CGFloat = 2
+        static let strokeCornerRadius: CGFloat = 16
+        static let strokeBorderWidth: CGFloat = 2
         static let onlineIndicatorSize: CGFloat = 15
         static let onlineIndicatorOffset: CGFloat = 20
     }
@@ -38,17 +38,17 @@ extension ContactAvatarView {
     private var storyBorder: some View {
         switch isStory {
         case true:
-            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+            RoundedRectangle(cornerRadius: Constants.strokeCornerRadius)
                 .stroke(
                     imageName != nil ? LinearGradient.blueGradient : LinearGradient.purpleGradient,
-                    lineWidth: Constants.borderWidth
+                    lineWidth: Constants.strokeBorderWidth
                 )
                 .frame(width: Constants.imageSize, height: Constants.imageSize)
         case false:
-            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+            RoundedRectangle(cornerRadius: Constants.strokeCornerRadius)
                 .stroke(
                     Color.clear,
-                    lineWidth: Constants.borderWidth
+                    lineWidth: Constants.strokeBorderWidth
                 )
                 .frame(width: Constants.imageSize, height: Constants.imageSize)
         }
@@ -62,9 +62,9 @@ extension ContactAvatarView {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: Constants.avatarSize, height: Constants.avatarSize)
-                .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius - 2))
+                .clipShape(RoundedRectangle(cornerRadius: Constants.strokeCornerRadius - 2))
         case nil:
-            RoundedRectangle(cornerRadius: Constants.cornerRadius - 2)
+            RoundedRectangle(cornerRadius: Constants.strokeCornerRadius - 2)
                 .fill(Color.theme.defaultColor)
                 .frame(width: Constants.avatarSize, height: Constants.avatarSize)
                 .overlay(

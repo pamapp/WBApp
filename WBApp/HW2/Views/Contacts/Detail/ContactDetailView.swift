@@ -11,12 +11,11 @@ extension ContactDetailView {
     private enum Constants {
         static let circleSize: CGFloat = 200
         static let iconHeight: CGFloat = 90
-        
         static let imageTopPadding: CGFloat = 46
         static let nameTopPadding: CGFloat = 20
         static let phoneTopPadding: CGFloat = 4
         static let linksTopPadding: CGFloat = 40
-        static let linksHorizontalPadding: CGFloat = 40
+        static let linksHorizontalPadding: CGFloat = 26
     }
 }
 
@@ -49,8 +48,8 @@ struct ContactDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(
-                leading: NavigationBarButton(imageName: UI.Icons.back, title: UI.Strings.profile, action: onBack),
-                trailing: NavigationBarButton(imageName: UI.Icons.edit, action: {})
+                leading: NavigationBarItemView(imageName: UI.Icons.back, title: UI.Strings.profile, action: onBack),
+                trailing: NavigationBarItemView(imageName: UI.Icons.edit, action: {})
             )
         }
     }

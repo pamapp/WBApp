@@ -25,7 +25,7 @@ struct ContactsView: View {
             ContactsListView(onContactTap: showContactDetail)
                 .offset(x: offsets.contactsView)
                 .zIndex(0)
-
+            
             if let contact = selectedContact {
                 ContactDetailView(contact: contact, onBack: hideContactDetail)
                     .offset(x: offsets.detailView)
@@ -40,7 +40,7 @@ struct ContactsView: View {
             }
         }
     }
-
+    
     private func showContactDetail(contact: Contact) {
         withAnimation(.easeInOut(duration: 0.25)) {
             selectedContact = contact
@@ -48,7 +48,7 @@ struct ContactsView: View {
             router.navigate(to: .contactDetail(contact))
         }
     }
-
+    
     private func hideContactDetail() {
         withAnimation(.easeInOut(duration: 0.25)) {
             selectedContact = nil
@@ -56,7 +56,9 @@ struct ContactsView: View {
             router.navigate(to: .contacts)
         }
     }
+}
 
+extension ContactsView {
     private var dragGesture: some Gesture {
         DragGesture()
             .onChanged { value in
