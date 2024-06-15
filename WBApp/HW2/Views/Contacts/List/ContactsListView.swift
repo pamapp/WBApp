@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+extension ContactsView {
+    private enum Constants {
+        
+    }
+}
+
 struct ContactsListView: View {
     @EnvironmentObject var router: Router
     @State private var searchText = ""
@@ -48,8 +54,8 @@ struct ContactsListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(
-                leading: NavigationBarTitle(title: "Контакты").padding(.leading, 8),
-                trailing: NavigationBarButton(imageName: "plus", action: { print("add") })
+                leading: NavigationBarTitle(title: UI.Strings.contacts).padding(.leading, 8),
+                trailing: NavigationBarButton(imageName: UI.Icons.plus, action: {})
             )
         }
     }
