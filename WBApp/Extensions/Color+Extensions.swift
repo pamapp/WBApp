@@ -33,3 +33,17 @@ struct ColorTheme {
     let gradient2_2 = Color("color_gradient2_2")
 }
 
+extension LinearGradient {
+    static var blueGradient = LinearGradient(
+        gradient: Gradient(colors: [Color.theme.gradient1_1, Color.theme.gradient1_2]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
+    static var purpleGradient = LinearGradient(
+        gradient: Gradient(colors: [Color.theme.gradient2_1, Color.theme.gradient2_2]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+}
+
