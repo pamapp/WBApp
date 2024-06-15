@@ -34,7 +34,7 @@ struct WalkthroughView: View {
                         dismissButton
                     }
             }
-            .background(Color.theme.backgroundColor)
+            .background(Color.theme.white)
         }
     }
 }
