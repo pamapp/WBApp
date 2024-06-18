@@ -14,10 +14,11 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
 
     // An example configurable parameter.
     @Parameter(title: "Favorite Emoji", default: "😃")
+    
     var favoriteEmoji: String
 }
 
-struct ChangeContactIntent : AppIntent {
+struct ChangeContactIntent: AppIntent {
     static var title: LocalizedStringResource = "Change Contact"
     
     @Parameter(title: "Contact index")

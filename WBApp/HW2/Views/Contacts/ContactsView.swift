@@ -39,6 +39,9 @@ struct ContactsView: View {
                     .zIndex(1)
             }
         }
+        .onOpenURL { url in
+            handleDeepLink(url: url)
+        }
     }
 
     private func showContactDetail(contact: Contact) {
@@ -79,5 +82,26 @@ struct ContactsView: View {
                     offsets.detailView = 0
                 }
             }
+    }
+    
+    private func handleDeepLink(url: URL) {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+        
+        switch components.host {
+        case "contactdetails":
+            if let id = components.queryItems?.first(where: { $0.name == "id" })?.value {
+                if let contactId = UUID(uuidString: id) {
+                    // я нажимаю на виджете на контакта (Анастасия Иванова) id которого должен совпадать с первым, но эти id разные
+                    print(contactId)
+                    print(SharedData.shared.contacts.first?.id)
+                    
+                    if let contact = SharedData.shared.contacts.first(where: { $0.id == contactId }) {
+                        selectedContact = contact
+                    }
+                }
+            }
+        default:
+            break
+        }
     }
 }

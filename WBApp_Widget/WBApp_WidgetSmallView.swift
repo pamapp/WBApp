@@ -4,39 +4,79 @@
 //
 //  Created by Alina Potapova on 17.06.2024.
 //
+import WidgetKit
 
 import SwiftUI
 
-struct SmallView: View {
+struct WBApp_WidgetSmallView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
+        GeometryReader { geo in
+            VStack {     
+                contactImageView
             
-            Text(entry.contactToDisplay[entry.currentContactIndex].name)
-                .font(.bodyText1())
-            
-            HStack {
-                Button(intent: ChangeContactIntent(index: (entry.currentContactIndex - 1 + entry.contactToDisplay.count) % entry.contactToDisplay.count)) {
-                    Text("<")
-                        .foregroundStyle(.blue)
-                }
-                .background(
-                    Capsule()
-                        .foregroundColor(Color.theme.defaultColor)
-                )
+                Text(entry.contactToDisplay[entry.currentContactIndex].name)
+                    .font(.bodyText1())
                 
                 Spacer()
                 
-                Button(intent: ChangeContactIntent(index: (entry.currentContactIndex + 1) % entry.contactToDisplay.count)) {
-                    Text(">")
-                        .foregroundStyle(.blue)
+                HStack {
+                    Button(intent: ChangeContactIntent(index: (entry.currentContactIndex - 1 + entry.contactToDisplay.count) % entry.contactToDisplay.count)) {
+                        Image(systemName: "chevron.left")
+                            .foregroundStyle(Color.theme.offWhite)
+                    }
+                    .frame(width: geo.size.width / 2 - 4, height: 30)
+                    .background(
+                        Capsule()
+                            .foregroundColor(Color.theme.defaultColor)
+                    )
+                    .buttonStyle(.plain)
+
+                    Spacer()
+                    
+                    Button(intent: ChangeContactIntent(index: (entry.currentContactIndex + 1) % entry.contactToDisplay.count)) {
+                        Image(systemName: "chevron.right")
+                            .foregroundStyle(Color.theme.offWhite)
+                    }
+                    .frame(width: geo.size.width / 2 - 4, height: 30)
+                    .background(
+                        Capsule()
+                            .foregroundColor(Color.theme.defaultColor)
+                    )
+                    .buttonStyle(.plain)
+
                 }
-                .background(
-                    Capsule()
-                        .foregroundColor(Color.theme.defaultColor)
-                )
             }
+            .widgetURL(URL(string: "myapp://contactdetails?id=\(entry.contactToDisplay[entry.currentContactIndex].id.uuidString)")!)
+        }
+    }
+    
+    @ViewBuilder
+    private var contactImageView: some View {
+        switch entry.contactToDisplay[entry.currentContactIndex].imageName {
+        case .some(let imageName):
+            Image(imageName)
+                .resizable()
+                .frame(width: 64, height: 64)
+                .clipShape(Circle())
+        case nil:
+            Circle()
+                .frame(width: 64, height: 64)
+                .foregroundStyle(Color.theme.defaultColor)
+                .overlay(
+                    Text(entry.contactToDisplay[entry.currentContactIndex].name.initials)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14, weight: .bold))
+                )
         }
     }
 }
+
+
+#Preview(as: .systemSmall) {
+    WBApp_Widget()
+} timeline: {
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
+}
+

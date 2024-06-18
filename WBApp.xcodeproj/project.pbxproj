@@ -50,6 +50,8 @@
 		9157F16F2C2085B500CF0EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552A2C0FAFBC004DA582 /* Assets.xcassets */; };
 		9157F1722C20864000CF0EC2 /* WBApp_WidgetSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */; };
 		9157F1732C2086A100CF0EC2 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B9FDA2C14EA3300A10CFA /* Font+Extensions.swift */; };
+		9157F17B2C20987800CF0EC2 /* WBApp_WidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */; };
+		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,7 @@
 		9157F15C2C20756A00CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9157F1672C20766100CF0EC2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetSmallView.swift; sourceTree = "<group>"; };
+		9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetMediumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,7 @@
 				9157F1542C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift */,
 				9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */,
 				9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */,
+				9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */,
 				9157F1582C20756900CF0EC2 /* AppIntent.swift */,
 				9157F15A2C20756A00CF0EC2 /* Assets.xcassets */,
 				9157F15C2C20756A00CF0EC2 /* Info.plist */,
@@ -460,9 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9157F16B2C20772D00CF0EC2 /* Contact.swift in Sources */,
+				9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */,
 				9157F1722C20864000CF0EC2 /* WBApp_WidgetSmallView.swift in Sources */,
 				9157F1532C20756900CF0EC2 /* WBApp_WidgetBundle.swift in Sources */,
 				9157F16E2C20858200CF0EC2 /* Color+Extensions.swift in Sources */,
+				9157F17B2C20987800CF0EC2 /* WBApp_WidgetMediumView.swift in Sources */,
 				9157F16C2C20778500CF0EC2 /* Date+Extensions.swift in Sources */,
 				9157F1592C20756900CF0EC2 /* AppIntent.swift in Sources */,
 				9157F1552C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift in Sources */,

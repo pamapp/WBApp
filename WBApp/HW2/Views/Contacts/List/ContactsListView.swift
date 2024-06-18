@@ -23,7 +23,7 @@ struct ContactsListView: View {
                         .padding(.top, 16)
                         .padding(.bottom, 8)
                     
-                    List(Contact.contacts.filter {
+                    List(SharedData.shared.contacts.filter {
                         searchText.isEmpty ? true : $0.name.contains(searchText)
                     }) { contact in
                         ContactRowView(contact: contact)

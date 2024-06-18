@@ -9,24 +9,21 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> ToDoEntry {
-        ToDoEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: SharedData.shared.currentContactIndex, configuration: ConfigurationAppIntent())
+    func placeholder(in context: Context) -> WidgetEntry {
+        WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex, configuration: ConfigurationAppIntent())
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> ToDoEntry {
-        ToDoEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: SharedData.shared.currentContactIndex, configuration: configuration)
+    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WidgetEntry {
+        WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex, configuration: configuration)
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<ToDoEntry> {
-        // Get data from database
-        let toDisplay = Array(SharedData.shared.contacts)
-        
-        let timeline = Timeline(entries: [ToDoEntry(contactToDisplay: toDisplay, currentContactIndex: SharedData.shared.currentContactIndex, configuration: configuration)], policy: .atEnd)
+    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WidgetEntry> {
+        let timeline = Timeline(entries: [WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex, configuration: configuration)], policy: .atEnd)
         return timeline
     }
 }
 
-struct ToDoEntry: TimelineEntry {
+struct WidgetEntry: TimelineEntry {
     var date: Date = .now
     var contactToDisplay : [Contact]
     var currentContactIndex : Int
@@ -40,52 +37,21 @@ struct WBApp_WidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+            WBApp_WidgetSmallView(entry: entry)
         case .systemMedium:
-            MediumView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+            WBApp_WidgetMediumView(entry: entry)
         case .systemLarge:
-            MediumView(entry: entry)
+            WBApp_WidgetMediumView(entry: entry)
         case .systemExtraLarge:
-            MediumView(entry: entry)
-
+            WBApp_WidgetMediumView(entry: entry)
         case .accessoryCircular:
-            MediumView(entry: entry)
-
+            WBApp_WidgetMediumView(entry: entry)
         case .accessoryRectangular:
-            MediumView(entry: entry)
-
+            WBApp_WidgetMediumView(entry: entry)
         case .accessoryInline:
-            MediumView(entry: entry)
-
+            WBApp_WidgetMediumView(entry: entry)
         @unknown default:
-            MediumView(entry: entry)
-        }
-    }
-}
-struct MediumView: View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        
-        VStack {
-            Text(entry.contactToDisplay[entry.currentContactIndex].name)
-                .font(.headline)
-            
-            HStack {
-                Button(intent: ChangeContactIntent(index: (entry.currentContactIndex - 1 + entry.contactToDisplay.count) % entry.contactToDisplay.count)) {
-                    Text("<<")
-                        .foregroundStyle(.red)
-                }.buttonStyle(.plain)
-                
-                Spacer()
-                
-                Button(intent: ChangeContactIntent(index: (entry.currentContactIndex + 1) % entry.contactToDisplay.count)) {
-                    Text(">>")
-                        .foregroundStyle(.red)
-                }.buttonStyle(.plain)
-            }
+            WBApp_WidgetMediumView(entry: entry)
         }
     }
 }
@@ -103,7 +69,7 @@ struct WBApp_Widget: Widget {
 }
 
 extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
+    static var smiley: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
         intent.favoriteEmoji = "😀"
         return intent
@@ -116,10 +82,10 @@ extension ConfigurationAppIntent {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .accessoryRectangular) {
     WBApp_Widget()
 } timeline: {
-    ToDoEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
-    ToDoEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
 }
 
