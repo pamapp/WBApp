@@ -9,9 +9,12 @@ import SwiftUI
 
 extension ContactRowView {
     private enum Constants {
+        static let rowSpacing: CGFloat = 20
+        static let infoSpacing: CGFloat = 20
+
         static let nameHeight: CGFloat = 24
         static let lastSeenHeight: CGFloat = 20
-        static let infoHeight: CGFloat = 20
+        static let infoHeight: CGFloat = 56
     }
 }
 

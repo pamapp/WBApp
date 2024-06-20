@@ -11,12 +11,11 @@ extension ContactDetailView {
     private enum Constants {
         static let circleSize: CGFloat = 200
         static let iconHeight: CGFloat = 90
-        
         static let imageTopPadding: CGFloat = 46
         static let nameTopPadding: CGFloat = 20
         static let phoneTopPadding: CGFloat = 4
         static let linksTopPadding: CGFloat = 40
-        static let linksHorizontalPadding: CGFloat = 40
+        static let linksHorizontalPadding: CGFloat = 26
     }
 }
 
@@ -25,33 +24,33 @@ struct ContactDetailView: View {
     let onBack: () -> Void
 
     var body: some View {
-        NavigationStack {
-            GeometryReader { geo in
-                VStack(spacing: 0) {
-                    contactImageView
-                        .padding(.top, geo.adaptiveVerticalPadding(Constants.imageTopPadding))
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                CustomNavigationBar(
+                    title: UI.Strings.profile,
+                    leadingIcon: UI.Icons.back,
+                    trailingIcon: UI.Icons.edit,
+                    leadingAction: onBack,
+                    trailingAction: {}
+                )
 
-                    contactNameView
-                        .padding(.top, geo.adaptiveVerticalPadding(Constants.nameTopPadding))
-                    
-                    contactPhoneView
-                        .padding(.top, geo.adaptiveVerticalPadding(Constants.phoneTopPadding))
-                    
-                    SocialLinksView(links: contact.links)
-                        .padding(.top, geo.adaptiveVerticalPadding(Constants.linksTopPadding))
-                        .padding(.horizontal, Constants.linksHorizontalPadding)
+                contactImageView
+                    .padding(.top, geo.adaptiveVerticalPadding(Constants.imageTopPadding))
 
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                .background(Color.theme.white.ignoresSafeArea(.all))
+                contactNameView
+                    .padding(.top, geo.adaptiveVerticalPadding(Constants.nameTopPadding))
+                
+                contactPhoneView
+                    .padding(.top, geo.adaptiveVerticalPadding(Constants.phoneTopPadding))
+                
+                SocialLinksView(links: contact.links)
+                    .padding(.top, geo.adaptiveVerticalPadding(Constants.linksTopPadding))
+                    .padding(.horizontal, Constants.linksHorizontalPadding)
+
+                Spacer()
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(
-                leading: NavigationBarButton(imageName: UI.Icons.back, title: UI.Strings.profile, action: onBack),
-                trailing: NavigationBarButton(imageName: UI.Icons.edit, action: {})
-            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.theme.white.ignoresSafeArea(.all))
         }
     }
 }
