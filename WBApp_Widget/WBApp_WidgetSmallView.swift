@@ -73,7 +73,6 @@ struct WBApp_WidgetSmallView: View {
     }
 }
 
-
 #Preview(as: .systemSmall) {
     WBApp_Widget()
 } timeline: {

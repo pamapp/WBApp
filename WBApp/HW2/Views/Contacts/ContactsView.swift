@@ -89,16 +89,16 @@ struct ContactsView: View {
         
         switch components.host {
         case "contactdetails":
-            if let id = components.queryItems?.first(where: { $0.name == "id" })?.value {
-                if let contactId = UUID(uuidString: id) {
+            if let name = components.queryItems?.first(where: { $0.name == "name" })?.value {
+//                if let contactId = UUID(uuidString: id) {
                     // я нажимаю на виджете на контакта (Анастасия Иванова) id которого должен совпадать с первым, но эти id разные
-                    print(contactId)
-                    print(SharedData.shared.contacts.first?.id)
+//                    print(contactId)
+//                    print(SharedData.shared.contacts.first?.id)
                     
-                    if let contact = SharedData.shared.contacts.first(where: { $0.id == contactId }) {
+                    if let contact = SharedData.shared.contacts.first(where: { $0.name == name }) {
                         selectedContact = contact
                     }
-                }
+//                }
             }
         default:
             break

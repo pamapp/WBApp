@@ -71,18 +71,18 @@ struct WBApp_Widget: Widget {
 extension ConfigurationAppIntent {
     static var smiley: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+        intent.contactNames = SharedData.shared.contacts.map { $0.name }
         return intent
     }
     
     fileprivate static var starEyes: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
+//        intent.favoriteEmoji = "🤩"
         return intent
     }
 }
 
-#Preview(as: .accessoryRectangular) {
+#Preview(as: .systemExtraLarge) {
     WBApp_Widget()
 } timeline: {
     WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
