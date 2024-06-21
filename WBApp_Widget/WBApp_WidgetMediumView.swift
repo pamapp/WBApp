@@ -4,7 +4,7 @@
 //
 //  Created by Alina Potapova on 17.06.2024.
 //
-
+import WidgetKit
 import SwiftUI
 
 struct WBApp_WidgetMediumView: View {
@@ -51,3 +51,12 @@ struct WBApp_WidgetMediumView: View {
         }
     }
 }
+
+#Preview(as: .systemMedium) {
+    WBApp_Widget()
+} timeline: {
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
+}
+

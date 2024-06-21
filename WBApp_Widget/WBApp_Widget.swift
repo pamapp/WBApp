@@ -10,15 +10,15 @@ import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> WidgetEntry {
-        WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex, configuration: ConfigurationAppIntent())
+        WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WidgetEntry {
-        WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex, configuration: configuration)
+        WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WidgetEntry> {
-        let timeline = Timeline(entries: [WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex, configuration: configuration)], policy: .atEnd)
+        let timeline = Timeline(entries: [WidgetEntry(contactToDisplay: SharedData.shared.contacts, currentContactIndex: SharedData.shared.currentContactIndex)], policy: .atEnd)
         return timeline
     }
 }
@@ -27,7 +27,6 @@ struct WidgetEntry: TimelineEntry {
     var date: Date = .now
     var contactToDisplay : [Contact]
     var currentContactIndex : Int
-    let configuration: ConfigurationAppIntent
 }
 
 struct WBApp_WidgetEntryView : View {
@@ -65,21 +64,14 @@ struct WBApp_Widget: Widget {
             WBApp_WidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-    }
-}
-
-extension ConfigurationAppIntent {
-    static var contactsFromApp: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.contactNames = SharedData.shared.contacts.map { $0.name }
-        return intent
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 #Preview(as: .systemExtraLarge) {
     WBApp_Widget()
 } timeline: {
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .contactsFromApp)
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .contactsFromApp)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
 }
 

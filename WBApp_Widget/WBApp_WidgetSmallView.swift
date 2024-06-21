@@ -22,36 +22,25 @@ struct WBApp_WidgetSmallView: View {
                 Spacer()
                 
                 HStack {
-                    Button(intent: ChangeContactIntent(index: (entry.currentContactIndex - 1 + entry.contactToDisplay.count) % entry.contactToDisplay.count)) {
-                        Image(systemName: "chevron.left")
-                            .foregroundStyle(Color.theme.offWhite)
-                    }
-                    .frame(width: geo.size.width / 2 - 4, height: 30)
-                    .background(
-                        Capsule()
-                            .foregroundColor(Color.theme.defaultColor)
+                    changeContactButton(imageName: "chevron.left",
+                                        intentIndex: (entry.currentContactIndex - 1 + entry.contactToDisplay.count) % entry.contactToDisplay.count,
+                                        geo: geo
                     )
-                    .buttonStyle(.plain)
-
+                    
                     Spacer()
                     
-                    Button(intent: ChangeContactIntent(index: (entry.currentContactIndex + 1) % entry.contactToDisplay.count)) {
-                        Image(systemName: "chevron.right")
-                            .foregroundStyle(Color.theme.offWhite)
-                    }
-                    .frame(width: geo.size.width / 2 - 4, height: 30)
-                    .background(
-                        Capsule()
-                            .foregroundColor(Color.theme.defaultColor)
+                    changeContactButton(imageName: "chevron.right",
+                                        intentIndex: (entry.currentContactIndex + 1) % entry.contactToDisplay.count,
+                                        geo: geo
                     )
-                    .buttonStyle(.plain)
-
                 }
             }
             .widgetURL(URL(string: "myapp://contactdetails?name=\(entry.contactToDisplay[entry.currentContactIndex].name)")!)
         }
     }
-    
+}
+
+extension WBApp_WidgetSmallView {
     @ViewBuilder
     private var contactImageView: some View {
         switch entry.contactToDisplay[entry.currentContactIndex].imageName {
@@ -71,11 +60,24 @@ struct WBApp_WidgetSmallView: View {
                 )
         }
     }
+    
+    private func changeContactButton(imageName: String, intentIndex: Int, geo: GeometryProxy) -> some View {
+        Button(intent: ChangeContactIntent(index: (intentIndex))) {
+            Image(systemName: imageName)
+                .foregroundStyle(Color.theme.offWhite)
+        }
+        .frame(width: geo.size.width / 2 - 4, height: 30)
+        .background(
+            Capsule()
+                .foregroundColor(Color.theme.defaultColor)
+        )
+        .buttonStyle(.plain)
+    }
 }
 
 #Preview(as: .systemSmall) {
     WBApp_Widget()
 } timeline: {
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .contactsFromApp)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
 }
 
