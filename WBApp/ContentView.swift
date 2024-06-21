@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var router = Router()
-
+    
     var body: some View {
         //        WalkthroughView()
         
@@ -19,6 +19,15 @@ struct ContentView: View {
             TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
         ])
         .environmentObject(router)
+        .onAppear {
+            setupNotifications()
+        }
+    }
+
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(forName: .openChats, object: nil, queue: .main) { _ in
+            router.navigate(to: .chat)
+        }
     }
 }
 
