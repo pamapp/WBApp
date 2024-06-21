@@ -38,7 +38,7 @@
 		9157F1532C20756900CF0EC2 /* WBApp_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1522C20756900CF0EC2 /* WBApp_WidgetBundle.swift */; };
 		9157F1552C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1542C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift */; };
 		9157F1572C20756900CF0EC2 /* WBApp_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */; };
-		9157F1592C20756900CF0EC2 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1582C20756900CF0EC2 /* AppIntent.swift */; };
+		9157F1592C20756900CF0EC2 /* WidgetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1582C20756900CF0EC2 /* WidgetIntent.swift */; };
 		9157F15B2C20756A00CF0EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9157F15A2C20756A00CF0EC2 /* Assets.xcassets */; };
 		9157F15F2C20756A00CF0EC2 /* WBApp_WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9157F14B2C20756900CF0EC2 /* WBApp_WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9157F1682C20766100CF0EC2 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1672C20766100CF0EC2 /* SharedData.swift */; };
@@ -114,7 +114,7 @@
 		9157F1522C20756900CF0EC2 /* WBApp_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetBundle.swift; sourceTree = "<group>"; };
 		9157F1542C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetLiveActivity.swift; sourceTree = "<group>"; };
 		9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_Widget.swift; sourceTree = "<group>"; };
-		9157F1582C20756900CF0EC2 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		9157F1582C20756900CF0EC2 /* WidgetIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetIntent.swift; sourceTree = "<group>"; };
 		9157F15A2C20756A00CF0EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9157F15C2C20756A00CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9157F1672C20766100CF0EC2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 				9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */,
 				9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */,
 				9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */,
-				9157F1582C20756900CF0EC2 /* AppIntent.swift */,
+				9157F1582C20756900CF0EC2 /* WidgetIntent.swift */,
 				9157F15A2C20756A00CF0EC2 /* Assets.xcassets */,
 				9157F15C2C20756A00CF0EC2 /* Info.plist */,
 			);
@@ -488,7 +488,7 @@
 				9157F16E2C20858200CF0EC2 /* Color+Extensions.swift in Sources */,
 				9157F17B2C20987800CF0EC2 /* WBApp_WidgetMediumView.swift in Sources */,
 				9157F16C2C20778500CF0EC2 /* Date+Extensions.swift in Sources */,
-				9157F1592C20756900CF0EC2 /* AppIntent.swift in Sources */,
+				9157F1592C20756900CF0EC2 /* WidgetIntent.swift in Sources */,
 				9157F1552C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift in Sources */,
 				9157F1692C20767D00CF0EC2 /* SharedData.swift in Sources */,
 				9157F1572C20756900CF0EC2 /* WBApp_Widget.swift in Sources */,
