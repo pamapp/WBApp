@@ -45,7 +45,7 @@ struct ContactsView: View {
         withAnimation(.easeInOut(duration: 0.25)) {
             selectedContact = contact
             offsets.contactsView = -Constants.contactsViewOffset
-            router.navigate(to: .contactDetail(contact))
+            router.navigate(to: .contactDetail)
         }
     }
     

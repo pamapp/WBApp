@@ -9,7 +9,7 @@ import Combine
 
 enum AppRoute: Hashable {
     case contacts
-    case contactDetail(_ contact: Contact)
+    case contactDetail
     case addContact
     case chat
     case settings
