@@ -52,8 +52,8 @@
 		9157F1732C2086A100CF0EC2 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B9FDA2C14EA3300A10CFA /* Font+Extensions.swift */; };
 		9157F17B2C20987800CF0EC2 /* WBApp_WidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */; };
 		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
-		9157F1842C25702000CF0EC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1832C25702000CF0EC2 /* Intents.intentdefinition */; };
 		9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */; };
+		9157F18A2C257CE900CF0EC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,9 +120,9 @@
 		9157F1672C20766100CF0EC2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetSmallView.swift; sourceTree = "<group>"; };
 		9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetMediumView.swift; sourceTree = "<group>"; };
-		9157F1832C25702000CF0EC2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		9157F1852C25704300CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
+		9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Intents.intentdefinition; path = ../../Intents.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,7 +332,6 @@
 			children = (
 				9157F1862C25705F00CF0EC2 /* Intents */,
 				9157F1672C20766100CF0EC2 /* SharedData.swift */,
-				9157F1832C25702000CF0EC2 /* Intents.intentdefinition */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -340,6 +339,7 @@
 		9157F1862C25705F00CF0EC2 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
+				9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */,
 				9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */,
 			);
 			path = Intents;
@@ -450,6 +450,7 @@
 				910B9FDB2C14EA3300A10CFA /* Font+Extensions.swift in Sources */,
 				912595972C1D7EBD0053D7FC /* Constants.swift in Sources */,
 				9125959F2C1D884D0053D7FC /* Date+Extensions.swift in Sources */,
+				9157F18A2C257CE900CF0EC2 /* Intents.intentdefinition in Sources */,
 				910B9FD92C14EA2D00A10CFA /* Color+Extensions.swift in Sources */,
 				912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */,
 				912595832C1CDDA50053D7FC /* ContactsView.swift in Sources */,
@@ -472,7 +473,6 @@
 				9125958F2C1D743E0053D7FC /* View+Extensions.swift in Sources */,
 				912595A42C1D97C80053D7FC /* ContactAvatarView.swift in Sources */,
 				912595922C1D7E010053D7FC /* TabBarView.swift in Sources */,
-				9157F1842C25702000CF0EC2 /* Intents.intentdefinition in Sources */,
 				910B9FD72C14EA2800A10CFA /* WalkthroughView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
