@@ -16,6 +16,7 @@
 		912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55282C0FAFBA004DA582 /* ContentView.swift */; };
 		912D552B2C0FAFBC004DA582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552A2C0FAFBC004DA582 /* Assets.xcassets */; };
 		912D552E2C0FAFBC004DA582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */; };
+		9157F1822C2568C500CF0EC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1812C2568C500CF0EC2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		912D55282C0FAFBA004DA582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		912D552A2C0FAFBC004DA582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9157F1812C2568C500CF0EC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				912D55282C0FAFBA004DA582 /* ContentView.swift */,
 				910B9FDE2C14EA4100A10CFA /* HW1 */,
 				910B9FDF2C14EA4600A10CFA /* Extensions */,
+				9157F1802C2568B900CF0EC2 /* Helpers */,
 				912D552A2C0FAFBC004DA582 /* Assets.xcassets */,
 				912D552C2C0FAFBC004DA582 /* Preview Content */,
 			);
@@ -96,6 +99,14 @@
 				912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9157F1802C2568B900CF0EC2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9157F1812C2568C500CF0EC2 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				910B9FD52C14EA2100A10CFA /* ButtonStyles.swift in Sources */,
 				912D55272C0FAFBA004DA582 /* WBAppApp.swift in Sources */,
 				910B9FD72C14EA2800A10CFA /* WalkthroughView.swift in Sources */,
+				9157F1822C2568C500CF0EC2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

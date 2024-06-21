@@ -12,10 +12,14 @@ extension Color {
 }
 
 struct ColorTheme {
-    let backgroundColor = Color("BackgroundColor")
-    let offWhite = Color("Off-white")
-    let active = Color("Active")
-    let darkColor = Color("Dark")
-    let defaultColor = Color("Default")
+    
+    //Brand Colors
+    let darkColor = Color("color_dark")
+    let defaultColor = Color("color_default")
+    let offWhite = Color("color_off_white")
+    
+    //Neutral
+    let white = Color("color_white")
+    let active = Color("color_active")
+    let disabled = Color("color_disabled")
 }
-
