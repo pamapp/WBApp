@@ -17,7 +17,6 @@ extension ContactsView {
 struct ContactsView: View {
     @EnvironmentObject var router: Router
     
-    @State private var selectedContact: Contact? = nil
     @State private var offsets: (detailView: CGFloat, contactsView: CGFloat) = (0, 0)
     
     var body: some View {
@@ -25,13 +24,13 @@ struct ContactsView: View {
             ContactsListView(onContactTap: showContactDetail)
                 .offset(x: offsets.contactsView)
                 .zIndex(0)
-            
-            if let contact = selectedContact {
+
+            if let contact = router.selectedContact {
                 ContactDetailView(contact: contact, onBack: hideContactDetail)
                     .offset(x: offsets.detailView)
                     .transition(.move(edge: .trailing))
                     .gesture(dragGesture)
-                    .onChange(of: selectedContact) { newValue in
+                    .onChange(of: router.selectedContact) { newValue in
                         if newValue == nil {
                             offsets.detailView = UI.screenWidth
                         }
@@ -40,18 +39,16 @@ struct ContactsView: View {
             }
         }
     }
-    
+
     private func showContactDetail(contact: Contact) {
         withAnimation(.easeInOut(duration: 0.25)) {
-            selectedContact = contact
             offsets.contactsView = -Constants.contactsViewOffset
-            router.navigate(to: .contactDetail)
+            router.navigate(to: .contactDetail, contact: contact)
         }
     }
-    
+
     private func hideContactDetail() {
         withAnimation(.easeInOut(duration: 0.25)) {
-            selectedContact = nil
             offsets.contactsView = 0
             router.navigate(to: .contacts)
         }
@@ -60,26 +57,26 @@ struct ContactsView: View {
 
 extension ContactsView {
     private var dragGesture: some Gesture {
-        DragGesture()
-            .onChanged { value in
-                let translation = value.translation.width
-                if translation > 0 {
-                    offsets.detailView = translation
-                    let progress = min(max(offsets.detailView / UI.screenWidth, 0), 1)
-                    offsets.contactsView = -Constants.contactsViewOffset + progress * Constants.contactsViewOffset
-                }
-            }
-            .onEnded { value in
-                if value.translation.width > Constants.dragThreshold {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        selectedContact = nil
-                        offsets.contactsView = 0
+            DragGesture()
+                .onChanged { value in
+                    let translation = value.translation.width
+                    if translation > 0 {
+                        offsets.detailView = translation
+                        let progress = min(max(offsets.detailView / UI.screenWidth, 0), 1)
+                        offsets.contactsView = -Constants.contactsViewOffset + progress * Constants.contactsViewOffset
                     }
                 }
+                .onEnded { value in
+                    if value.translation.width > Constants.dragThreshold {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            router.selectedContact = nil
+                            offsets.contactsView = 0
+                        }
+                    }
 
-                withAnimation(.easeInOut(duration: 0.1)) {
-                    offsets.detailView = 0
+                    withAnimation(.easeInOut(duration: 0.1)) {
+                        offsets.detailView = 0
+                    }
                 }
-            }
-    }
+        }
 }

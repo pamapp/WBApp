@@ -17,6 +17,7 @@ enum AppRoute: Hashable {
 
 final class Router: ObservableObject {
     @Published var selectedRoute: AppRoute = .contacts
+    @Published var selectedContact: Contact? = nil
 
     var baseRoute: AppRoute {
         switch selectedRoute {
@@ -29,8 +30,10 @@ final class Router: ObservableObject {
         }
     }
 
-    func navigate(to route: AppRoute) {
+    func navigate(to route: AppRoute, contact: Contact? = nil) {
         self.selectedRoute = route
+        if case .contactDetail = route {
+            self.selectedContact = contact
+        }
     }
 }
-
