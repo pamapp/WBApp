@@ -15,7 +15,7 @@ enum AppRoute: Hashable {
     case settings
 }
 
-class Router: ObservableObject {
+final class Router: ObservableObject {
     @Published var selectedRoute: AppRoute = .contacts
 
     var baseRoute: AppRoute {
