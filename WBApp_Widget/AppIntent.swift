@@ -10,13 +10,32 @@ import AppIntents
 
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Configuration"
-    static var description = IntentDescription("This is an example widget.")
+    static var description = IntentDescription("Select contacts to display in the widget.")
     
-    @Parameter(title: "Contact Names") var contactNames: [String]
-     
+    @Parameter(title: "Contacts")
+    var contactNames: [String]
+    
+    // Маппинг имен контактов в ID
+    var contactIdMapping: [String: String] {
+        var mapping = [String: String]()
+        for contact in SharedData.shared.contacts {
+            mapping[contact.name] = contact.id.uuidString
+        }
+        return mapping
+    }
+    
+    // Конструкторы
     init() {
-        // Инициализация с набором имён по умолчанию
-        self.contactNames = ["sdfg", "sdfg", "gsdhg"]
+        self.contactNames = SharedData.shared.contacts.map { $0.name }
+    }
+    
+    init(names: [String]) {
+        self.contactNames = names
+    }
+    
+    // Получение ID выбранных контактов
+    var selectedContactIds: [String] {
+        contactNames.compactMap { contactIdMapping[$0] }
     }
 }
 

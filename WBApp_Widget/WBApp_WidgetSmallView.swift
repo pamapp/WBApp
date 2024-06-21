@@ -4,8 +4,8 @@
 //
 //  Created by Alina Potapova on 17.06.2024.
 //
-import WidgetKit
 
+import WidgetKit
 import SwiftUI
 
 struct WBApp_WidgetSmallView: View {
@@ -76,6 +76,6 @@ struct WBApp_WidgetSmallView: View {
 #Preview(as: .systemSmall) {
     WBApp_Widget()
 } timeline: {
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .smiley)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0, configuration: .contactsFromApp)
 }
 

@@ -330,8 +330,8 @@
 		9157F1662C20765000CF0EC2 /* HW3 */ = {
 			isa = PBXGroup;
 			children = (
-				9157F1862C25705F00CF0EC2 /* Intents */,
 				9157F1672C20766100CF0EC2 /* SharedData.swift */,
+				9157F1862C25705F00CF0EC2 /* Intents */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -339,8 +339,8 @@
 		9157F1862C25705F00CF0EC2 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */,
 				9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */,
+				9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */,
 			);
 			path = Intents;
 			sourceTree = "<group>";

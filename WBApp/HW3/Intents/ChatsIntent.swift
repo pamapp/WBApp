@@ -9,7 +9,7 @@ import Foundation
 import AppIntents
 
 final class ChatsIntent: AppIntent {
-    static var title: LocalizedStringResource = "Open Chats page in WBApp"
+    static var title: LocalizedStringResource = "Open Chats in WBApp"
     static var openAppWhenRun: Bool = true
 
     func perform() async throws -> some IntentResult {
