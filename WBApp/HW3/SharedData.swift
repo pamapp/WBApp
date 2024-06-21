@@ -80,7 +80,7 @@ class SharedData {
         .init(name: "Вова",
               imageName: "vova",
               lastSeen: .init(),
-              isStory: true,
+              isStory: false,
               links: [
                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
                   SocialLink(media: .instagram, url: "https://instagram.com"),

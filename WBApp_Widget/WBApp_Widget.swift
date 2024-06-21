@@ -25,8 +25,8 @@ struct Provider: AppIntentTimelineProvider {
 
 struct WidgetEntry: TimelineEntry {
     var date: Date = .now
-    var contactToDisplay : [Contact]
-    var currentContactIndex : Int
+    var contactToDisplay: [Contact]
+    var currentContactIndex: Int
 }
 
 struct WBApp_WidgetEntryView : View {

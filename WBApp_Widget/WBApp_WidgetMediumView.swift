@@ -55,8 +55,8 @@ struct WBApp_WidgetMediumView: View {
 #Preview(as: .systemMedium) {
     WBApp_Widget()
 } timeline: {
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
-    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts), currentContactIndex: 0)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts.prefix(3)), currentContactIndex: 0)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts.prefix(6)), currentContactIndex: 0)
+    WidgetEntry(contactToDisplay: Array(SharedData.shared.contacts.prefix(8)), currentContactIndex: 0)
 }
 

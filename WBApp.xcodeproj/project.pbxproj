@@ -36,7 +36,6 @@
 		9157F14E2C20756900CF0EC2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9157F14D2C20756900CF0EC2 /* WidgetKit.framework */; };
 		9157F1502C20756900CF0EC2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9157F14F2C20756900CF0EC2 /* SwiftUI.framework */; };
 		9157F1532C20756900CF0EC2 /* WBApp_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1522C20756900CF0EC2 /* WBApp_WidgetBundle.swift */; };
-		9157F1552C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1542C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift */; };
 		9157F1572C20756900CF0EC2 /* WBApp_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */; };
 		9157F1592C20756900CF0EC2 /* WidgetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1582C20756900CF0EC2 /* WidgetIntent.swift */; };
 		9157F15B2C20756A00CF0EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9157F15A2C20756A00CF0EC2 /* Assets.xcassets */; };
@@ -112,7 +111,6 @@
 		9157F14D2C20756900CF0EC2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		9157F14F2C20756900CF0EC2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		9157F1522C20756900CF0EC2 /* WBApp_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetBundle.swift; sourceTree = "<group>"; };
-		9157F1542C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetLiveActivity.swift; sourceTree = "<group>"; };
 		9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_Widget.swift; sourceTree = "<group>"; };
 		9157F1582C20756900CF0EC2 /* WidgetIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetIntent.swift; sourceTree = "<group>"; };
 		9157F15A2C20756A00CF0EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				9157F1522C20756900CF0EC2 /* WBApp_WidgetBundle.swift */,
-				9157F1542C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift */,
 				9157F1562C20756900CF0EC2 /* WBApp_Widget.swift */,
 				9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */,
 				9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */,
@@ -489,7 +486,6 @@
 				9157F17B2C20987800CF0EC2 /* WBApp_WidgetMediumView.swift in Sources */,
 				9157F16C2C20778500CF0EC2 /* Date+Extensions.swift in Sources */,
 				9157F1592C20756900CF0EC2 /* WidgetIntent.swift in Sources */,
-				9157F1552C20756900CF0EC2 /* WBApp_WidgetLiveActivity.swift in Sources */,
 				9157F1692C20767D00CF0EC2 /* SharedData.swift in Sources */,
 				9157F1572C20756900CF0EC2 /* WBApp_Widget.swift in Sources */,
 				9157F16D2C20778E00CF0EC2 /* Constants.swift in Sources */,
