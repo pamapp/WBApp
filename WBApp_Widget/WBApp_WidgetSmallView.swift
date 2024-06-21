@@ -48,7 +48,7 @@ struct WBApp_WidgetSmallView: View {
 
                 }
             }
-            .widgetURL(URL(string: "myapp://contactdetails?id=\(entry.contactToDisplay[entry.currentContactIndex].id.uuidString)")!)
+            .widgetURL(URL(string: "myapp://contactdetails?name=\(entry.contactToDisplay[entry.currentContactIndex].name)")!)
         }
     }
     

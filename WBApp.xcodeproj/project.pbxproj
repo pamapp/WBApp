@@ -52,6 +52,8 @@
 		9157F1732C2086A100CF0EC2 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B9FDA2C14EA3300A10CFA /* Font+Extensions.swift */; };
 		9157F17B2C20987800CF0EC2 /* WBApp_WidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */; };
 		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
+		9157F1842C25702000CF0EC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1832C25702000CF0EC2 /* Intents.intentdefinition */; };
+		9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,9 @@
 		9157F1672C20766100CF0EC2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		9157F1702C20861F00CF0EC2 /* WBApp_WidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetSmallView.swift; sourceTree = "<group>"; };
 		9157F1792C20986600CF0EC2 /* WBApp_WidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBApp_WidgetMediumView.swift; sourceTree = "<group>"; };
+		9157F1832C25702000CF0EC2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		9157F1852C25704300CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +280,7 @@
 		912D55252C0FAFBA004DA582 /* WBApp */ = {
 			isa = PBXGroup;
 			children = (
+				9157F1852C25704300CF0EC2 /* Info.plist */,
 				912D55262C0FAFBA004DA582 /* WBAppApp.swift */,
 				912D55282C0FAFBA004DA582 /* ContentView.swift */,
 				910B9FDE2C14EA4100A10CFA /* HW1 */,
@@ -324,9 +330,19 @@
 		9157F1662C20765000CF0EC2 /* HW3 */ = {
 			isa = PBXGroup;
 			children = (
+				9157F1862C25705F00CF0EC2 /* Intents */,
 				9157F1672C20766100CF0EC2 /* SharedData.swift */,
+				9157F1832C25702000CF0EC2 /* Intents.intentdefinition */,
 			);
 			path = HW3;
+			sourceTree = "<group>";
+		};
+		9157F1862C25705F00CF0EC2 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +457,7 @@
 				912595942C1D7E220053D7FC /* SearchBarView.swift in Sources */,
 				9157F1682C20766100CF0EC2 /* SharedData.swift in Sources */,
 				910B9FDD2C14EA3C00A10CFA /* GeometryProxy+Extensions.swift in Sources */,
+				9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */,
 				912595A22C1D91B40053D7FC /* ViewModifiers.swift in Sources */,
 				912595892C1CDDCF0053D7FC /* ContactDetailView.swift in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
@@ -455,6 +472,7 @@
 				9125958F2C1D743E0053D7FC /* View+Extensions.swift in Sources */,
 				912595A42C1D97C80053D7FC /* ContactAvatarView.swift in Sources */,
 				912595922C1D7E010053D7FC /* TabBarView.swift in Sources */,
+				9157F1842C25702000CF0EC2 /* Intents.intentdefinition in Sources */,
 				910B9FD72C14EA2800A10CFA /* WalkthroughView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +639,7 @@
 				DEVELOPMENT_TEAM = 93HP7KN2HJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WBApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -652,6 +671,7 @@
 				DEVELOPMENT_TEAM = 93HP7KN2HJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WBApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -683,7 +703,7 @@
 				INFOPLIST_FILE = WBApp_Widget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WBApp_Widget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,7 +731,7 @@
 				INFOPLIST_FILE = WBApp_Widget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WBApp_Widget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
