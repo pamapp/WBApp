@@ -122,6 +122,7 @@
 		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
 		9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Intents.intentdefinition; path = ../../Intents.intentdefinition; sourceTree = "<group>"; };
 		9157F1932C26ED9D00CF0EC2 /* Bank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Bank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9157F1962C27179600CF0EC2 /* Factory.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Factory.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +261,7 @@
 		912D551A2C0FAFBA004DA582 = {
 			isa = PBXGroup;
 			children = (
+				9157F1952C27176600CF0EC2 /* HW5 */,
 				9157F1942C26EDA300CF0EC2 /* HW4 */,
 				912D55252C0FAFBA004DA582 /* WBApp */,
 				9157F1512C20756900CF0EC2 /* WBApp_Widget */,
@@ -350,6 +352,14 @@
 				9157F1932C26ED9D00CF0EC2 /* Bank.playground */,
 			);
 			path = HW4;
+			sourceTree = "<group>";
+		};
+		9157F1952C27176600CF0EC2 /* HW5 */ = {
+			isa = PBXGroup;
+			children = (
+				9157F1962C27179600CF0EC2 /* Factory.playground */,
+			);
+			path = HW5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
