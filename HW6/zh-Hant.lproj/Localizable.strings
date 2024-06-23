@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WBApp
+
+  Created by Alina Potapova on 23.06.2024.
+  
+*/
+
+"Day before yesterday" = "前天";
+"Yesterday" = "昨天";
+"Today" = "今天";
+"Tomorrow" = "明天";
+"Day after tomorrow" = "后天";
