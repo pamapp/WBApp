@@ -31,7 +31,7 @@ class Passport {
     init(series: Int, number: Int, dateOfIssue: Date, owner: Person? = nil) {
         self.series = series
         self.number = number
-        self.dateOfIssue = issueDate
+        self.dateOfIssue = dateOfIssue
         self.owner = owner
         
         print("✅ 🪪 Init <\(series) \(number)> passport\n")
