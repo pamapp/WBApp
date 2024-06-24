@@ -50,6 +50,7 @@ struct ContactsView: View {
     private func hideContactDetail() {
         withAnimation(.easeInOut(duration: 0.25)) {
             offsets.contactsView = 0
+            router.selectedContact = nil
             router.navigate(to: .contacts)
         }
     }
@@ -70,6 +71,7 @@ extension ContactsView {
                     if value.translation.width > Constants.dragThreshold {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             router.selectedContact = nil
+                            router.navigate(to: .contacts)
                             offsets.contactsView = 0
                         }
                     }
