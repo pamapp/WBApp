@@ -1,5 +1,5 @@
 //
-//  String+Extesions.swift
+//  StringInterpolation+Extensions.swift
 //  WBApp
 //
 //  Created by Alina Potapova on 23.06.2024.
