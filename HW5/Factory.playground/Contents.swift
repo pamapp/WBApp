@@ -28,7 +28,7 @@ class Passport {
     var dateOfIssue: Date
     weak var owner: Person?
 
-    init(series: Int, number: Int, issueDate: Date, owner: Person? = nil) {
+    init(series: Int, number: Int, dateOfIssue: Date, owner: Person? = nil) {
         self.series = series
         self.number = number
         self.dateOfIssue = issueDate
@@ -165,8 +165,8 @@ func runFactorySimulation() {
     let person1 = Person(fullName: "Petr Sushkov", age: 30)
     let person2 = Person(fullName: "Maria Vasilyeva", age: 25)
     
-    let passport1 = Passport(series: 6423, number: 123456, issueDate: Date(), owner: person1)
-    let passport2 = Passport(series: 3567, number: 654321, issueDate: Date(), owner: person2)
+    let passport1 = Passport(series: 6423, number: 123456, dateOfIssue: Date(), owner: person1)
+    let passport2 = Passport(series: 3567, number: 654321, dateOfIssue: Date(), owner: person2)
     
     person1.passport = passport1
     person2.passport = passport2
