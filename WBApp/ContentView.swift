@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var router = Router()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        //        WalkthroughView()
+        
+        TabBarView(tabs: [
+            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsView()), route: .contacts),
+            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(Text("Chats")), route: .chat),
+            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
+        ])
+        .environmentObject(router)
     }
 }
-
 
 #Preview {
     ContentView()
 }
-
 
 
