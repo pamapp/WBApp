@@ -15,7 +15,8 @@ struct Contact: Identifiable, Hashable  {
     var isStory: Bool = true
     var links: [SocialLink] = []
     var phoneNumber: String?
-    
+    var creationDate: Date = .init()
+
     var isOnline: Bool {
         Date().timeIntervalSince(lastSeen) < 60
     }
