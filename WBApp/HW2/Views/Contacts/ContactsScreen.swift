@@ -1,5 +1,5 @@
 //
-//  ContactsView.swift
+//  ContactsScreen.swift
 //  WBApp
 //
 //  Created by Alina Potapova on 13.06.2024.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-extension ContactsView {
+extension ContactsScreen {
     private enum Constants {
         static let contactsViewOffset: CGFloat = UI.screenWidth * 0.3
         static let dragThreshold: CGFloat = 70.0
     }
 }
 
-struct ContactsView: View {
+struct ContactsScreen: View {
     @EnvironmentObject var router: Router
     
     @State private var offsets: (detailView: CGFloat, contactsView: CGFloat) = (0, 0)
@@ -56,7 +56,7 @@ struct ContactsView: View {
     }
 }
 
-extension ContactsView {
+extension ContactsScreen {
     private var dragGesture: some Gesture {
             DragGesture()
                 .onChanged { value in
