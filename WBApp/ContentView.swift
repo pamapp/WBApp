@@ -11,18 +11,21 @@ struct ContentView: View {
     @StateObject private var router = Router()
     
     var body: some View {
-        TabBarView(tabs: [
-            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsView()), route: .contacts),
-            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(Text("Chats")), route: .chat),
-            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
-        ])
-        .environmentObject(router)
-        .onAppear {
-            setupNotifications()
-        }
-        .onOpenURL { url in
-            handleDeepLink(url: url)
-        }
+        
+        InfinityScrollView()
+        
+//        TabBarView(tabs: [
+//            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsView()), route: .contacts),
+//            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(Text("Chats")), route: .chat),
+//            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
+//        ])
+//        .environmentObject(router)
+//        .onAppear {
+//            setupNotifications()
+//        }
+//        .onOpenURL { url in
+//            handleDeepLink(url: url)
+//        }
     }
 }
 

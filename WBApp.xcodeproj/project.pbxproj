@@ -54,8 +54,9 @@
 		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 		9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */; };
 		9157F18A2C257CE900CF0EC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */; };
-		915D8EAB2C282A6F00D1D67A /* DatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D8EAA2C282A6F00D1D67A /* DatesView.swift */; };
+		915D8EAB2C282A6F00D1D67A /* DatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D8EAA2C282A6F00D1D67A /* DatesScreen.swift */; };
 		915D8EAD2C282CB800D1D67A /* StringInterpolation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D8EAC2C282CB800D1D67A /* StringInterpolation+Extensions.swift */; };
+		919CD6622C2DFF7200FC274F /* InfinityScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919CD6612C2DFF7200FC274F /* InfinityScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +128,9 @@
 		9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Intents.intentdefinition; path = ../../Intents.intentdefinition; sourceTree = "<group>"; };
 		9157F1932C26ED9D00CF0EC2 /* Bank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Bank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9157F1962C27179600CF0EC2 /* Factory.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Factory.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		915D8EAA2C282A6F00D1D67A /* DatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesView.swift; sourceTree = "<group>"; };
+		915D8EAA2C282A6F00D1D67A /* DatesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesScreen.swift; sourceTree = "<group>"; };
 		915D8EAC2C282CB800D1D67A /* StringInterpolation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringInterpolation+Extensions.swift"; sourceTree = "<group>"; };
+		919CD6612C2DFF7200FC274F /* InfinityScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 		912D551A2C0FAFBA004DA582 = {
 			isa = PBXGroup;
 			children = (
+				919CD6602C2DFF6200FC274F /* HW7 */,
 				915D8EA92C28291100D1D67A /* HW6 */,
 				9157F1952C27176600CF0EC2 /* HW5 */,
 				9157F1942C26EDA300CF0EC2 /* HW4 */,
@@ -372,11 +375,19 @@
 		915D8EA92C28291100D1D67A /* HW6 */ = {
 			isa = PBXGroup;
 			children = (
-				915D8EAA2C282A6F00D1D67A /* DatesView.swift */,
+				915D8EAA2C282A6F00D1D67A /* DatesScreen.swift */,
 				912A7EDA2C2AE3E30015D71F /* DateProvider.swift */,
 				915D8EAC2C282CB800D1D67A /* StringInterpolation+Extensions.swift */,
 			);
 			path = HW6;
+			sourceTree = "<group>";
+		};
+		919CD6602C2DFF6200FC274F /* HW7 */ = {
+			isa = PBXGroup;
+			children = (
+				919CD6612C2DFF7200FC274F /* InfinityScrollView.swift */,
+			);
+			path = HW7;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,7 +501,7 @@
 				912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */,
 				912A7EDB2C2AE3E30015D71F /* DateProvider.swift in Sources */,
 				912595832C1CDDA50053D7FC /* ContactsView.swift in Sources */,
-				915D8EAB2C282A6F00D1D67A /* DatesView.swift in Sources */,
+				915D8EAB2C282A6F00D1D67A /* DatesScreen.swift in Sources */,
 				912595992C1D7F0A0053D7FC /* CustomNavigationBar.swift in Sources */,
 				912595942C1D7E220053D7FC /* SearchBarView.swift in Sources */,
 				9157F1682C20766100CF0EC2 /* SharedData.swift in Sources */,
@@ -498,6 +509,7 @@
 				9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */,
 				912595A22C1D91B40053D7FC /* ViewModifiers.swift in Sources */,
 				912595892C1CDDCF0053D7FC /* ContactDetailView.swift in Sources */,
+				919CD6622C2DFF7200FC274F /* InfinityScrollView.swift in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
@@ -687,7 +699,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pamapp.WBApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pamapp.wbsui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -719,7 +731,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pamapp.WBApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pamapp.wbsui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -746,7 +758,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pamapp.WBApp.WBApp-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pamapp.wbsui.WBsuiWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -774,7 +786,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pamapp.WBApp.WBApp-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pamapp.wbsui.WBsuiWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
