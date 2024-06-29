@@ -11,17 +11,11 @@ struct Emoji {
     static var all: [String] = {
         var emojis: [String] = []
         let emojiRanges: [ClosedRange<Int>] = [
+            0x1F200...0x1F2FF,
             0x1F300...0x1F5FF,
-            0x1F600...0x1F64F,
             0x1F680...0x1F6FF,
-            0x1F700...0x1F77F,
-            0x1F780...0x1F7FF,
-            0x1F800...0x1F8FF,
             0x1F900...0x1F9FF,
-            0x1FA00...0x1FA6F,
-            0x1FA70...0x1FAFF,
-            0x2600...0x26FF,
-            0x2700...0x27BF
+            0x1FA70...0x1FAFF
         ]
         
         for range in emojiRanges {
@@ -41,10 +35,10 @@ struct LayoutMetrics {
 
     var fontSize: CGFloat {
         switch columns {
-        case 1: return 250
-        case 2: return 100
-        case 3: return 50
-        case 4: return 30
+        case 1: return 270
+        case 2: return 120
+        case 3: return 70
+        case 4: return 50
         default: return 20
         }
     }
@@ -62,7 +56,7 @@ struct LayoutMetrics {
     }
 
     var strokeWidth: CGFloat {
-        interpolatedSize(min: 3, max: 8)
+        interpolatedSize(min: 4, max: 8)
     }
 
     var dashPattern: [CGFloat] {
@@ -104,11 +98,11 @@ struct EmojiCell: View {
 
             Text(emoji)
                 .font(.system(size: metrics.fontSize))
+                .opacity(0.5)
         }
         .frame(maxWidth: .infinity)
         .aspectRatio(1, contentMode: .fit)
         .padding(metrics.padding)
-                .background(Color.red)
     }
 
     private var left: some View {
@@ -166,22 +160,29 @@ struct InfinityScrollView: View {
     var body: some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: Array(repeating: .init(.flexible()), count: columnsNumber), spacing: LayoutMetrics(columns: columnsNumber).spacing) {
-                    ForEach(Array(Emoji.all.enumerated().shuffled()), id: \.offset) { index, emoji in
-                        EmojiCell(emoji: emoji, layout: .randomLayout, metrics: LayoutMetrics(columns: columnsNumber))
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                }
-            }
-            
-            Picker("Options", selection: $columnsNumber) {
+                scrollStickersView
+                    .id(columnsNumber)
+            }.scrollIndicators(.visible)
+
+            Picker("Columns Number", selection: $columnsNumber) {
                 ForEach(0..<listVariants.count, id: \.self) { i in
                     Text("\(listVariants[i])").tag(i + 1)
                 }
             }.pickerStyle(.segmented)
         }
+        .background(Color.theme.c8)
+    }
+    
+    private var scrollStickersView: some View {
+            LazyVGrid(columns: Array(repeating: .init(.flexible()), count: columnsNumber), spacing: LayoutMetrics(columns: columnsNumber).spacing) {
+                ForEach(Array(Emoji.all.enumerated().shuffled()), id: \.offset) { index, emoji in
+                    EmojiCell(emoji: emoji, layout: .randomLayout, metrics: LayoutMetrics(columns: columnsNumber))
+                        .aspectRatio(1, contentMode: .fit)
+                }
+            }
     }
 }
+
 #Preview {
     InfinityScrollView()
 }

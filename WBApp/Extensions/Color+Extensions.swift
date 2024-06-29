@@ -40,6 +40,7 @@ struct ColorTheme {
     let c5 = Color("c5")
     let c6 = Color("c6")
     let c7 = Color("c7")
+    let c8 = Color("c8")
 }
 
 extension ColorTheme {
