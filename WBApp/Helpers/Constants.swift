@@ -8,9 +8,6 @@
 import SwiftUI
 
 enum UI {
-    static let screenWidth: CGFloat = UIScreen.main.bounds.width
-    static let screenHeight: CGFloat = UIScreen.main.bounds.height
-    
     enum Strings {
         static let walkthrought_text: String = "Общайтесь с друзьями и близкими легко"
         static let userAgreement: String = "Пользовательское соглашение"
