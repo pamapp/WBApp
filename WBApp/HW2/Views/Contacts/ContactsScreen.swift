@@ -18,7 +18,7 @@ extension ContactsScreen {
 struct ContactsScreen: View {
     @EnvironmentObject var router: Router
     @State private var timer: Timer?
-    @State private var offsets: (detailView: CGFloat, contactsView: CGFloat) = (UIScreen.main.bounds.width, 0)
+    @State private var offsets: (detailView: CGFloat, contactsView: CGFloat) = (0, 0)
     
     var body: some View {
         ZStack {
@@ -32,10 +32,8 @@ struct ContactsScreen: View {
                         .offset(x: offsets.detailView)
                         .transition(.move(edge: .trailing))
                         .gesture(dragGesture(geo: geo))
-                        .onChange(of: router.selectedContact) { newValue in
-                            if newValue == nil {
-                                offsets.detailView = UIScreen.main.bounds.width
-                            }
+                        .onAppear {
+                            offsets = (detailView: 0, contactsView: -(geo.size.width * 0.3))
                         }
                         .zIndex(1)
                 }
@@ -46,8 +44,7 @@ struct ContactsScreen: View {
     private func showContactDetail(geo: GeometryProxy) -> (Contact) -> Void {
         return { contact in
             withAnimation(.easeInOut(duration: Constants.animationDuration)) {
-                offsets.contactsView = -(geo.size.width * 0.3)
-                offsets.detailView = 0
+                offsets = (detailView: 0, contactsView: -(geo.size.width * 0.3))
                 router.navigate(to: .contactDetail, contact: contact)
             }
         }
@@ -56,8 +53,7 @@ struct ContactsScreen: View {
     private func hideContactDetail(geo: GeometryProxy) -> () -> Void {
         return {
             withAnimation(.easeInOut(duration: Constants.animationDuration)) {
-                offsets.contactsView = 0
-                offsets.detailView = geo.size.width
+                offsets = (detailView: geo.size.width, contactsView: 0)
                 router.selectedContact = nil
                 router.navigate(to: .contacts)
             }
@@ -73,8 +69,8 @@ extension ContactsScreen {
                 let contactsViewOffset = geo.size.width * 0.3
                 
                 if translation > 0 {
+                    let progress = min(max(translation / UIScreen.main.bounds.width, 0), 1)
                     offsets.detailView = translation
-                    let progress = min(max(offsets.detailView / UIScreen.main.bounds.width, 0), 1)
                     offsets.contactsView = -contactsViewOffset + progress * contactsViewOffset
                 } else {
                     offsets.detailView = 0
@@ -84,8 +80,7 @@ extension ContactsScreen {
             .onEnded { value in
                 value.translation.width > Constants.dragThreshold ?
                     withAnimation(.linear(duration: Constants.gestureAnimationDuration)) {
-                        offsets.contactsView = 0
-                        offsets.detailView = UIScreen.main.bounds.width
+                        offsets = (detailView: geo.size.width, contactsView: 0)
                         router.selectedContact = nil
                         router.navigate(to: .contacts)
                     }
