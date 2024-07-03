@@ -15,7 +15,8 @@ struct Contact: Identifiable, Hashable {
     var isStory: Bool = true
     var links: [SocialLink] = []
     var phoneNumber: String?
-    
+    var creationDate: Date = .init()
+
     var isOnline: Bool {
         Date().timeIntervalSince(lastSeen) < 60
     }
@@ -66,71 +67,4 @@ enum SocialMedia {
         case .twitter: Image(UI.Brands.twitter)
         }
     }
-}
-
-extension Contact {
-    static let contacts: [Contact] = [
-         .init(name: "Анастасия Иванова",
-               imageName: "nastya",
-               lastSeen: Date(timeIntervalSinceNow: -24 * 3600),
-               isStory: false,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
-         .init(name: "Петя",
-               imageName: "petya",
-               lastSeen: Date(),
-               isStory: false,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-                   SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                   SocialLink(media: .twitter, url: "https://twitter.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
-         .init(name: "Маман",
-               imageName: "maman",
-               lastSeen: Date(timeIntervalSinceNow: -3 * 3600),
-               isStory: true,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-                   SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                   SocialLink(media: .twitter, url: "https://twitter.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
-         .init(name: "Арбуз Дыня",
-               imageName: "arbuz",
-               lastSeen: Date(),
-               isStory: false,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-                   SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                   SocialLink(media: .twitter, url: "https://twitter.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
-         .init(name: "Иван Иванов",
-               lastSeen: Date(),
-               isStory: false,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-                   SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                   SocialLink(media: .twitter, url: "https://twitter.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
-         .init(name: "Лиса Алиса",
-               lastSeen: Date(timeIntervalSinceNow: -30 * 60),
-               isStory: true,
-               links: [
-                   SocialLink(media: .facebook, url: "https://www.facebook.com/zuck"),
-                   SocialLink(media: .instagram, url: "https://instagram.com"),
-                   SocialLink(media: .linckedin, url: "https://linkedin.com"),
-                   SocialLink(media: .twitter, url: "https://twitter.com"),
-               ],
-               phoneNumber: "+7 999 999-99-99"),
-    ]
 }

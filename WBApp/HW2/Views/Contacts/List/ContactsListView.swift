@@ -43,7 +43,7 @@ struct ContactsListView: View {
 
 extension ContactsListView {
     private var listView: some View {
-        List(Contact.contacts.filter {
+        List(SharedData.shared.contacts.filter {
             searchText.isEmpty ? true : $0.name.contains(searchText)
         }) { contact in
             ContactRowView(contact: contact)

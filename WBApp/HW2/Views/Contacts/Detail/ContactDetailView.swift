@@ -29,7 +29,7 @@ struct ContactDetailView: View {
                 CustomNavigationBar(
                     title: UI.Strings.profile,
                     leadingIcon: UI.Icons.back,
-                    trailingIcon: UI.Icons.edit, 
+                    trailingIcon: UI.Icons.edit,
                     leadingAction: onBack,
                     trailingAction: {}
                 )
