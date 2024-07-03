@@ -98,4 +98,6 @@ class SharedData {
               ],
               phoneNumber: "+7 999 999-99-99"),
     ]
+    
+    private init() {}
 }

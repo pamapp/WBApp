@@ -14,7 +14,8 @@ struct WBApp_WidgetMediumView: View {
         Grid {
             HStack() {
                 ForEach(entry.contactToDisplay.prefix(4)) { contact in
-                    Link(destination: URL(string: "myapp://contactdetails?name=\(contact.name)")!) {
+                    
+                    Link(destination: URL(string: "myapp://contactdetails?initials=\(contact.name.initials)&creationDate=\(contact.creationDate.string)")!) {
                         contactImageView(imageName: contact.imageName, initials: contact.name.initials)
                     }        
                     .frame(maxWidth: .infinity)
@@ -22,7 +23,7 @@ struct WBApp_WidgetMediumView: View {
             }
             HStack {
                 ForEach(entry.contactToDisplay.dropFirst(4).prefix(4)) { contact in
-                    Link(destination: URL(string: "myapp://contactdetails?name=\(contact.name)")!) {
+                    Link(destination: URL(string: "myapp://contactdetails?initials=\(contact.name.initials)&creationDate=\(contact.creationDate.string))")!) {
                         contactImageView(imageName: contact.imageName, initials: contact.name.initials)
                     }
                     .frame(maxWidth: .infinity)
