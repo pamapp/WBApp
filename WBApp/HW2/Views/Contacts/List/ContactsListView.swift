@@ -24,22 +24,20 @@ struct ContactsListView: View {
     let onContactTap: (Contact) -> Void
     
     var body: some View {
-        GeometryReader  { geo in
-            VStack(spacing: Constants.spacing) {
-                CustomNavigationBar(
-                    title: UI.Strings.contacts,
-                    trailingIcon: UI.Icons.plus,
-                    trailingAction: {}
-                )
-      
-                SearchBarView(text: $searchText)
-                    .padding(.horizontal, Constants.searchBarHorizontalPadding)
-                    .padding(.top, Constants.searchBarTopPadding)
-                
-                listView
-            }
-            .background(Color.theme.white)
+        VStack(spacing: Constants.spacing) {
+            CustomNavigationBar(
+                title: UI.Strings.contacts,
+                trailingIcon: UI.Icons.plus,
+                trailingAction: {}
+            )
+  
+            SearchBarView(text: $searchText)
+                .padding(.horizontal, Constants.searchBarHorizontalPadding)
+                .padding(.top, Constants.searchBarTopPadding)
+            
+            listView
         }
+        .background(Color.theme.white)
     }
 }
 
