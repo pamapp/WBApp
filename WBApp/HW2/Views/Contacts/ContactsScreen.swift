@@ -9,7 +9,7 @@ import SwiftUI
 
 extension ContactsScreen {
     private enum Constants {
-        static let contactsViewOffset: CGFloat = UI.screenWidth * 0.3
+        static let contactsViewOffset: CGFloat = UIScreen.main.bounds.width * 0.3
         static let dragThreshold: CGFloat = 70.0
     }
 }
@@ -32,7 +32,7 @@ struct ContactsScreen: View {
                     .gesture(dragGesture)
                     .onChange(of: router.selectedContact) { newValue in
                         if newValue == nil {
-                            offsets.detailView = UI.screenWidth
+                            offsets.detailView = UIScreen.main.bounds.width
                         }
                     }
                     .zIndex(1)
@@ -63,7 +63,7 @@ extension ContactsScreen {
                     let translation = value.translation.width
                     if translation > 0 {
                         offsets.detailView = translation
-                        let progress = min(max(offsets.detailView / UI.screenWidth, 0), 1)
+                        let progress = min(max(offsets.detailView / UIScreen.main.bounds.width, 0), 1)
                         offsets.contactsView = -Constants.contactsViewOffset + progress * Constants.contactsViewOffset
                     }
                 }
