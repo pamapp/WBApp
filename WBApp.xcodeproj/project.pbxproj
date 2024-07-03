@@ -33,6 +33,8 @@
 		912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55282C0FAFBA004DA582 /* ContentView.swift */; };
 		912D552B2C0FAFBC004DA582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552A2C0FAFBC004DA582 /* Assets.xcassets */; };
 		912D552E2C0FAFBC004DA582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */; };
+		9188BD0A2C35D06F000DB4A7 /* ContainerSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD092C35D06F000DB4A7 /* ContainerSizeModifier.swift */; };
+		9188BD0C2C35D2BC000DB4A7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD0B2C35D2BC000DB4A7 /* CGSize+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		912D55282C0FAFBA004DA582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		912D552A2C0FAFBC004DA582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9188BD092C35D06F000DB4A7 /* ContainerSizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSizeModifier.swift; sourceTree = "<group>"; };
+		9188BD0B2C35D2BC000DB4A7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				910B9FD82C14EA2D00A10CFA /* Color+Extensions.swift */,
+				9188BD0B2C35D2BC000DB4A7 /* CGSize+Extensions.swift */,
 				910B9FDA2C14EA3300A10CFA /* Font+Extensions.swift */,
 				910B9FDC2C14EA3C00A10CFA /* GeometryProxy+Extensions.swift */,
 				9125958E2C1D743E0053D7FC /* View+Extensions.swift */,
@@ -120,6 +125,7 @@
 		9125957E2C1CDD490053D7FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9188BD082C35D04D000DB4A7 /* Modifiers */,
 				912595902C1D7DF40053D7FC /* Shared */,
 				912595952C1D7E5A0053D7FC /* Contacts */,
 			);
@@ -229,6 +235,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9188BD082C35D04D000DB4A7 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				9188BD092C35D06F000DB4A7 /* ContainerSizeModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,6 +327,8 @@
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
+				9188BD0C2C35D2BC000DB4A7 /* CGSize+Extensions.swift in Sources */,
+				9188BD0A2C35D06F000DB4A7 /* ContainerSizeModifier.swift in Sources */,
 				9125957C2C1CDD110053D7FC /* Contact.swift in Sources */,
 				912595A72C1DAB260053D7FC /* SocialLinksView.swift in Sources */,
 				910B9FD52C14EA2100A10CFA /* ButtonStyles.swift in Sources */,

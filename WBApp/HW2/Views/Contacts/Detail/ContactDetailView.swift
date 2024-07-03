@@ -22,36 +22,35 @@ extension ContactDetailView {
 struct ContactDetailView: View {
     let contact: Contact
     let onBack: () -> Void
-
+    let containerSize: CGSize
+    
     var body: some View {
-        GeometryReader { geo in
-            VStack(spacing: 0) {
-                CustomNavigationBar(
-                    title: UI.Strings.profile,
-                    leadingIcon: UI.Icons.back,
-                    trailingIcon: UI.Icons.edit, 
-                    leadingAction: onBack,
-                    trailingAction: {}
-                )
+        VStack(spacing: 0) {
+            CustomNavigationBar(
+                title: UI.Strings.profile,
+                leadingIcon: UI.Icons.back,
+                trailingIcon: UI.Icons.edit,
+                leadingAction: onBack,
+                trailingAction: {}
+            )
 
-                contactImageView
-                    .padding(.top, geo.adaptiveVerticalPadding(Constants.imageTopPadding))
+            contactImageView
+                .padding(.top, containerSize.adaptiveVerticalPadding(Constants.imageTopPadding))
 
-                contactNameView
-                    .padding(.top, geo.adaptiveVerticalPadding(Constants.nameTopPadding))
-                
-                contactPhoneView
-                    .padding(.top, geo.adaptiveVerticalPadding(Constants.phoneTopPadding))
-                
-                SocialLinksView(links: contact.links)
-                    .padding(.top, geo.adaptiveVerticalPadding(Constants.linksTopPadding))
-                    .padding(.horizontal, Constants.linksHorizontalPadding)
+            contactNameView
+                .padding(.top, containerSize.adaptiveVerticalPadding(Constants.nameTopPadding))
+            
+            contactPhoneView
+                .padding(.top, containerSize.adaptiveVerticalPadding(Constants.phoneTopPadding))
+            
+            SocialLinksView(links: contact.links)
+                .padding(.top, containerSize.adaptiveVerticalPadding(Constants.linksTopPadding))
+                .padding(.horizontal, Constants.linksHorizontalPadding)
 
-                Spacer()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .background(Color.theme.white.ignoresSafeArea(.all))
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.theme.white.ignoresSafeArea(.all))
     }
 }
 
