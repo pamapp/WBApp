@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Contact: Identifiable, Hashable  {
+struct Contact: Identifiable, Hashable {
     let id = UUID()
     var name: String = ""
     var imageName: String?
