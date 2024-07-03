@@ -26,7 +26,9 @@ struct SocialLinksView: View {
             }
         }
     }
+}
 
+extension SocialLinksView {
     private func socialLinkButton(link: SocialLink) -> some View {
         Link(destination: link.url) {
             Capsule()

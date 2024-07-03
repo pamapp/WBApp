@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Contact: Identifiable, Hashable  {
+struct Contact: Identifiable, Hashable {
     let id = UUID()
     var name: String = ""
     var imageName: String?
@@ -15,7 +15,8 @@ struct Contact: Identifiable, Hashable  {
     var isStory: Bool = true
     var links: [SocialLink] = []
     var phoneNumber: String?
-    
+    var creationDate: Date = .init()
+
     var isOnline: Bool {
         Date().timeIntervalSince(lastSeen) < 60
     }

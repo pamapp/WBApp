@@ -3,14 +3,10 @@
 //  WBApp
 //
 //  Created by Alina Potapova on 14.06.2024.
-//
 
 import SwiftUI
 
 enum UI {
-    static let screenWidth: CGFloat = UIScreen.main.bounds.width
-    static let screenHeight: CGFloat = UIScreen.main.bounds.height
-    
     enum Strings {
         static let search: String = "Search"
         static let walkthrought_text: String = "Общайтесь с друзьями и близкими легко"
