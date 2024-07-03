@@ -26,7 +26,7 @@
 		9125959B2C1D7F710053D7FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 		9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959C2C1D7F9B0053D7FC /* UIApplication+Extensions.swift */; };
 		9125959F2C1D884D0053D7FC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959E2C1D884D0053D7FC /* Date+Extensions.swift */; };
-		912595A22C1D91B40053D7FC /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A12C1D91B40053D7FC /* ViewModifiers.swift */; };
+		912595A22C1D91B40053D7FC /* ShadowModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A12C1D91B40053D7FC /* ShadowModifiers.swift */; };
 		912595A42C1D97C80053D7FC /* ContactAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A32C1D97C80053D7FC /* ContactAvatarView.swift */; };
 		912595A72C1DAB260053D7FC /* SocialLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A62C1DAB260053D7FC /* SocialLinksView.swift */; };
 		912D55272C0FAFBA004DA582 /* WBAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55262C0FAFBA004DA582 /* WBAppApp.swift */; };
@@ -57,7 +57,7 @@
 		9125959A2C1D7F710053D7FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9125959C2C1D7F9B0053D7FC /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		9125959E2C1D884D0053D7FC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		912595A12C1D91B40053D7FC /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		912595A12C1D91B40053D7FC /* ShadowModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModifiers.swift; sourceTree = "<group>"; };
 		912595A32C1D97C80053D7FC /* ContactAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAvatarView.swift; sourceTree = "<group>"; };
 		912595A62C1DAB260053D7FC /* SocialLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksView.swift; sourceTree = "<group>"; };
 		912D55232C0FAFBA004DA582 /* WBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +125,6 @@
 		9125957E2C1CDD490053D7FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9188BD082C35D04D000DB4A7 /* Modifiers */,
 				912595902C1D7DF40053D7FC /* Shared */,
 				912595952C1D7E5A0053D7FC /* Contacts */,
 			);
@@ -163,7 +162,8 @@
 		912595A02C1D91A20053D7FC /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				912595A12C1D91B40053D7FC /* ViewModifiers.swift */,
+				9188BD092C35D06F000DB4A7 /* ContainerSizeModifier.swift */,
+				912595A12C1D91B40053D7FC /* ShadowModifiers.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -233,14 +233,6 @@
 				912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		9188BD082C35D04D000DB4A7 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				9188BD092C35D06F000DB4A7 /* ContainerSizeModifier.swift */,
-			);
-			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +314,7 @@
 				912595992C1D7F0A0053D7FC /* CustomNavigationBar.swift in Sources */,
 				912595942C1D7E220053D7FC /* SearchBarView.swift in Sources */,
 				910B9FDD2C14EA3C00A10CFA /* GeometryProxy+Extensions.swift in Sources */,
-				912595A22C1D91B40053D7FC /* ViewModifiers.swift in Sources */,
+				912595A22C1D91B40053D7FC /* ShadowModifiers.swift in Sources */,
 				912595892C1CDDCF0053D7FC /* ContactDetailView.swift in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
