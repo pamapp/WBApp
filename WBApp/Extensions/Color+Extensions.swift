@@ -31,6 +31,26 @@ struct ColorTheme {
     let gradient1_2 = Color("color_gradient1_2")
     let gradient2_1 = Color("color_gradient2_1")
     let gradient2_2 = Color("color_gradient2_2")
+
+    //HW7
+    let c1 = Color("c1")
+    let c2 = Color("c2")
+    let c3 = Color("c3")
+    let c4 = Color("c4")
+    let c5 = Color("c5")
+    let c6 = Color("c6")
+    let c7 = Color("c7")
+    let c8 = Color("c8")
+}
+
+extension ColorTheme {
+    var hw7Colors: [Color] {
+        return [c1, c2, c3, c4, c5, c6, c7]
+    }
+    
+    var randomColor: Color {
+        return hw7Colors.randomElement()!
+    }
 }
 
 extension LinearGradient {
