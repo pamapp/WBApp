@@ -13,8 +13,7 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     
     static var description = IntentDescription("Show avatar full screen")
 
-    @Parameter(title: "Con")
-    var fullScreen: Bool
+    @Parameter(title: "Image full screen") var fullScreen: Bool
 }
 
 
