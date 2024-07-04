@@ -58,6 +58,7 @@
 		91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E062C36AFD200D8C23E /* DateProvider.swift */; };
 		91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E072C36AFD200D8C23E /* DatesScreen.swift */; };
 		91EB7E0C2C36AFD200D8C23E /* StringInterpolation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E082C36AFD200D8C23E /* StringInterpolation+Extensions.swift */; };
+		91EB7E112C36B40500D8C23E /* InfinityScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E0F2C36B40500D8C23E /* InfinityScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		91EB7E062C36AFD200D8C23E /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		91EB7E072C36AFD200D8C23E /* DatesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesScreen.swift; sourceTree = "<group>"; };
 		91EB7E082C36AFD200D8C23E /* StringInterpolation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringInterpolation+Extensions.swift"; sourceTree = "<group>"; };
+		91EB7E0F2C36B40500D8C23E /* InfinityScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfinityScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 		912D551A2C0FAFBA004DA582 = {
 			isa = PBXGroup;
 			children = (
+				91EB7E102C36B40500D8C23E /* HW7 */,
 				91EB7E092C36AFD200D8C23E /* HW6 */,
 				912D55252C0FAFBA004DA582 /* WBApp */,
 				9157F1512C20756900CF0EC2 /* WBApp_Widget */,
@@ -363,6 +366,14 @@
 				91EB7E082C36AFD200D8C23E /* StringInterpolation+Extensions.swift */,
 			);
 			path = HW6;
+			sourceTree = "<group>";
+		};
+		91EB7E102C36B40500D8C23E /* HW7 */ = {
+			isa = PBXGroup;
+			children = (
+				91EB7E0F2C36B40500D8C23E /* InfinityScrollView.swift */,
+			);
+			path = HW7;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +499,7 @@
 				91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
+				91EB7E112C36B40500D8C23E /* InfinityScrollView.swift in Sources */,
 				9125957C2C1CDD110053D7FC /* Contact.swift in Sources */,
 				9188BD2B2C36AAC6000DB4A7 /* ShadowModifiers.swift in Sources */,
 				912595A72C1DAB260053D7FC /* SocialLinksView.swift in Sources */,
