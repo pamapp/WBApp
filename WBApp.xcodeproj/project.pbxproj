@@ -25,7 +25,6 @@
 		9125959B2C1D7F710053D7FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 		9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959C2C1D7F9B0053D7FC /* UIApplication+Extensions.swift */; };
 		9125959F2C1D884D0053D7FC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959E2C1D884D0053D7FC /* Date+Extensions.swift */; };
-		912595A22C1D91B40053D7FC /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A12C1D91B40053D7FC /* ViewModifiers.swift */; };
 		912595A42C1D97C80053D7FC /* ContactAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A32C1D97C80053D7FC /* ContactAvatarView.swift */; };
 		912595A72C1DAB260053D7FC /* SocialLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912595A62C1DAB260053D7FC /* SocialLinksView.swift */; };
 		912D55272C0FAFBA004DA582 /* WBAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55262C0FAFBA004DA582 /* WBAppApp.swift */; };
@@ -52,8 +51,9 @@
 		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 		9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */; };
 		9157F18A2C257CE900CF0EC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */; };
-		9188BD192C35EFED000DB4A7 /* ContainerSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD182C35EFED000DB4A7 /* ContainerSizeModifier.swift */; };
 		9188BD1B2C35EFFF000DB4A7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */; };
+		9188BD2B2C36AAC6000DB4A7 /* ShadowModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD2A2C36AAC6000DB4A7 /* ShadowModifiers.swift */; };
+		9188BD2D2C36AB2D000DB4A7 /* ContainerSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD2C2C36AB2D000DB4A7 /* ContainerSizeModifier.swift */; };
 		91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D377CB2C2F152E005503C2 /* ContactsScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +100,6 @@
 		9125959A2C1D7F710053D7FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9125959C2C1D7F9B0053D7FC /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		9125959E2C1D884D0053D7FC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		912595A12C1D91B40053D7FC /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		912595A32C1D97C80053D7FC /* ContactAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAvatarView.swift; sourceTree = "<group>"; };
 		912595A62C1DAB260053D7FC /* SocialLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksView.swift; sourceTree = "<group>"; };
 		912D55232C0FAFBA004DA582 /* WBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,8 +121,9 @@
 		9157F1852C25704300CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
 		9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Intents.intentdefinition; path = ../../Intents.intentdefinition; sourceTree = "<group>"; };
-		9188BD182C35EFED000DB4A7 /* ContainerSizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSizeModifier.swift; sourceTree = "<group>"; };
 		9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		9188BD2A2C36AAC6000DB4A7 /* ShadowModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowModifiers.swift; sourceTree = "<group>"; };
+		9188BD2C2C36AB2D000DB4A7 /* ContainerSizeModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerSizeModifier.swift; sourceTree = "<group>"; };
 		91D377CB2C2F152E005503C2 /* ContactsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +192,6 @@
 		9125957E2C1CDD490053D7FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9188BD172C35EFE1000DB4A7 /* Modifiers */,
 				912595902C1D7DF40053D7FC /* Shared */,
 				912595952C1D7E5A0053D7FC /* Contacts */,
 			);
@@ -230,7 +229,8 @@
 		912595A02C1D91A20053D7FC /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				912595A12C1D91B40053D7FC /* ViewModifiers.swift */,
+				9188BD2C2C36AB2D000DB4A7 /* ContainerSizeModifier.swift */,
+				9188BD2A2C36AAC6000DB4A7 /* ShadowModifiers.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -348,14 +348,6 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
-		9188BD172C35EFE1000DB4A7 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				9188BD182C35EFED000DB4A7 /* ContainerSizeModifier.swift */,
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,7 +454,7 @@
 				912595972C1D7EBD0053D7FC /* Constants.swift in Sources */,
 				9125959F2C1D884D0053D7FC /* Date+Extensions.swift in Sources */,
 				9188BD1B2C35EFFF000DB4A7 /* CGSize+Extensions.swift in Sources */,
-				9188BD192C35EFED000DB4A7 /* ContainerSizeModifier.swift in Sources */,
+				9188BD2D2C36AB2D000DB4A7 /* ContainerSizeModifier.swift in Sources */,
 				9157F18A2C257CE900CF0EC2 /* Intents.intentdefinition in Sources */,
 				910B9FD92C14EA2D00A10CFA /* Color+Extensions.swift in Sources */,
 				912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */,
@@ -471,13 +463,13 @@
 				9157F1682C20766100CF0EC2 /* SharedData.swift in Sources */,
 				910B9FDD2C14EA3C00A10CFA /* GeometryProxy+Extensions.swift in Sources */,
 				9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */,
-				912595A22C1D91B40053D7FC /* ViewModifiers.swift in Sources */,
 				912595892C1CDDCF0053D7FC /* ContactDetailView.swift in Sources */,
 				91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
 				9125957C2C1CDD110053D7FC /* Contact.swift in Sources */,
+				9188BD2B2C36AAC6000DB4A7 /* ShadowModifiers.swift in Sources */,
 				912595A72C1DAB260053D7FC /* SocialLinksView.swift in Sources */,
 				910B9FD52C14EA2100A10CFA /* ButtonStyles.swift in Sources */,
 				9125959B2C1D7F710053D7FC /* String+Extensions.swift in Sources */,
