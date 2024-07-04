@@ -35,7 +35,7 @@ struct WBApp_WidgetSmallView: View {
                     )
                 }
             }
-            .widgetURL(URL(string: "myapp://contactdetails?name=\(entry.contactToDisplay[entry.currentContactIndex].name)")!)
+            .widgetURL(URL(string: "myapp://contactdetails?initials=\(entry.contactToDisplay[entry.currentContactIndex].name.initials)&creationDate=\(entry.contactToDisplay[entry.currentContactIndex].creationDate)")!)
         }
     }
 }

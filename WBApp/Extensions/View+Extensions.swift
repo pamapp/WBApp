@@ -12,3 +12,9 @@ extension View {
         self.modifier(TabBarShadow())
     }
 }
+
+extension View {
+    func containerSizeGetter(_ size: Binding<CGSize>) -> some View {
+        modifier(ContainerSizeModifier(size: size))
+    }
+}
