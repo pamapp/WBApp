@@ -35,15 +35,13 @@ extension ContentView {
     
     private func handleDeepLink(url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
-        
+
         switch components.host {
         case "contactdetails":
             if let name = components.queryItems?.first(where: { $0.name == "initials" })?.value,
                let creationDate = components.queryItems?.first(where: { $0.name == "creationDate" })?.value {
-                print(name, creationDate)
-                print(SharedData.shared.contacts[0].creationDate.string)
-                if let contact = SharedData.shared.contacts.first(where: { $0.name.initials == name && $0.creationDate.string == creationDate }) {
-                    router.navigate(to: .contactDetail, contact: contact)
+                if let contact = SharedData.shared.contacts.first(where: { $0.name.initials == name && $0.creationDate == creationDate }) {
+                        router.navigate(to: .contactDetail, contact: contact)
                 }
             }
         default:
