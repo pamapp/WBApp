@@ -14,11 +14,4 @@ extension Date {
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter.string(from: self)
     }
-    
-    var string: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-        dateFormatter.timeZone = TimeZone.current
-        return dateFormatter.string(from: self)
-    }
 }
