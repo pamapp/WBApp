@@ -55,6 +55,9 @@
 		9188BD2B2C36AAC6000DB4A7 /* ShadowModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD2A2C36AAC6000DB4A7 /* ShadowModifiers.swift */; };
 		9188BD2D2C36AB2D000DB4A7 /* ContainerSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD2C2C36AB2D000DB4A7 /* ContainerSizeModifier.swift */; };
 		91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D377CB2C2F152E005503C2 /* ContactsScreen.swift */; };
+		91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E062C36AFD200D8C23E /* DateProvider.swift */; };
+		91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E072C36AFD200D8C23E /* DatesScreen.swift */; };
+		91EB7E0C2C36AFD200D8C23E /* StringInterpolation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E082C36AFD200D8C23E /* StringInterpolation+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		9188BD2A2C36AAC6000DB4A7 /* ShadowModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowModifiers.swift; sourceTree = "<group>"; };
 		9188BD2C2C36AB2D000DB4A7 /* ContainerSizeModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerSizeModifier.swift; sourceTree = "<group>"; };
 		91D377CB2C2F152E005503C2 /* ContactsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
+		91EB7E062C36AFD200D8C23E /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
+		91EB7E072C36AFD200D8C23E /* DatesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesScreen.swift; sourceTree = "<group>"; };
+		91EB7E082C36AFD200D8C23E /* StringInterpolation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringInterpolation+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +271,7 @@
 		912D551A2C0FAFBA004DA582 = {
 			isa = PBXGroup;
 			children = (
+				91EB7E092C36AFD200D8C23E /* HW6 */,
 				912D55252C0FAFBA004DA582 /* WBApp */,
 				9157F1512C20756900CF0EC2 /* WBApp_Widget */,
 				9157F14C2C20756900CF0EC2 /* Frameworks */,
@@ -346,6 +353,16 @@
 				9157F1892C257CE900CF0EC2 /* Intents.intentdefinition */,
 			);
 			path = Intents;
+			sourceTree = "<group>";
+		};
+		91EB7E092C36AFD200D8C23E /* HW6 */ = {
+			isa = PBXGroup;
+			children = (
+				91EB7E062C36AFD200D8C23E /* DateProvider.swift */,
+				91EB7E072C36AFD200D8C23E /* DatesScreen.swift */,
+				91EB7E082C36AFD200D8C23E /* StringInterpolation+Extensions.swift */,
+			);
+			path = HW6;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +476,7 @@
 				910B9FD92C14EA2D00A10CFA /* Color+Extensions.swift in Sources */,
 				912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */,
 				912595992C1D7F0A0053D7FC /* CustomNavigationBar.swift in Sources */,
+				91EB7E0C2C36AFD200D8C23E /* StringInterpolation+Extensions.swift in Sources */,
 				912595942C1D7E220053D7FC /* SearchBarView.swift in Sources */,
 				9157F1682C20766100CF0EC2 /* SharedData.swift in Sources */,
 				910B9FDD2C14EA3C00A10CFA /* GeometryProxy+Extensions.swift in Sources */,
@@ -466,6 +484,8 @@
 				912595892C1CDDCF0053D7FC /* ContactDetailView.swift in Sources */,
 				91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
+				91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */,
+				91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
 				9125957C2C1CDD110053D7FC /* Contact.swift in Sources */,
