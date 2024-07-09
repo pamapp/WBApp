@@ -15,6 +15,9 @@ enum UI {
         static let dismiss: String = "Dismiss"
         static let profile: String = "Профиль"
         static let contacts: String = "Контакты"
+        static let continueText: String = "Продолжить"
+        static let enterPhoneNumber = "Введите номер телефона"
+        static let infoText = "Мы вышлем код подтверждения на указаный номер"
     }
     
     enum Icons {
