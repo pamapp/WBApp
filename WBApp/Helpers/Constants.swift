@@ -18,6 +18,12 @@ enum UI {
         static let continueText: String = "Продолжить"
         static let enterPhoneNumber = "Введите номер телефона"
         static let infoText = "Мы вышлем код подтверждения на указаный номер"
+        
+        static let enterCode = "Введите код"
+        static let sendingCodeInfo = "Отправили код на номер"
+        static let requestCodeAgain = "Запросить код повторно"
+        static let incorrectCode = "Неверный код"
+        static let codeExpired = "Срок действия кода истек"
     }
     
     enum Icons {
