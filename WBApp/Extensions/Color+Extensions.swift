@@ -25,7 +25,8 @@ struct ColorTheme {
     
     //Accent
     let success = Color("color_success")
-    
+    let danger = Color("color_danger")
+
     //Gradient
     let gradient1_1 = Color("color_gradient1_1")
     let gradient1_2 = Color("color_gradient1_2")
