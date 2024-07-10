@@ -7,7 +7,7 @@
 
 import Foundation
 
-class OTPTimer: ObservableObject {
+final class OTPTimer: ObservableObject {
     @Published var remainingTime: TimeInterval = 0
     private var timer: Timer?
 
