@@ -8,6 +8,12 @@
 import SwiftUI
 
 extension String {
+    var digits: [String] {
+        return self.compactMap { $0.isNumber ? String($0) : "" }
+    }
+}
+
+extension String {
     var initials: String {
         let components = self.split(separator: " ")
         let initials = components.compactMap { $0.first }.map { String($0) }
