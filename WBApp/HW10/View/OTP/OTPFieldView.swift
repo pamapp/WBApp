@@ -1,5 +1,5 @@
 //
-//  PinFieldView.swift
+//  OTPFieldView.swift
 //  WBApp
 //
 //  Created by Alina Potapova on 10.07.2024.
@@ -10,6 +10,10 @@ import SwiftUI
 extension OTPFieldView {
     private enum Constants {
         static let maxDigits: Int = 4
+        static let pinCellWidth: CGFloat = 28
+        static let pinCellHeight: CGFloat = 40
+        static let pinCellsSpacing: CGFloat = 40
+        static let dotSide: CGFloat = 24
     }
 }
 
@@ -26,8 +30,8 @@ public struct OTPFieldView: View {
     public var body: some View {
         VStack {
             ZStack {
-                backgroundField
                 pinDots
+                backgroundField
             }
         }
     }
@@ -50,10 +54,10 @@ public struct OTPFieldView: View {
 
 extension OTPFieldView {
     private var pinDots: some View {
-        HStack(spacing: size ~ 40) {
+        HStack(spacing: size ~ Constants.pinCellsSpacing) {
             ForEach(0..<Constants.maxDigits, id: \.self) { index in
                 pinDotView(at: index)
-                    .frame(width: size ~ 28, height: size ~ 40)
+                    .frame(width: size ~ Constants.pinCellWidth, height: size ~ Constants.pinCellHeight)
             }
         }
     }
@@ -68,7 +72,7 @@ extension OTPFieldView {
                     .font(.heading1())
             default:
                 Circle()
-                    .frame(width: size ~ 24, height: size ~ 24)
+                    .frame(width: size ~ Constants.dotSide, height: size ~ Constants.dotSide)
                     .foregroundColor(Color.theme.offWhite)
                     .padding(.horizontal, 5)
             }

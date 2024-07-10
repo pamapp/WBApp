@@ -9,12 +9,12 @@ import SwiftUI
 
 struct OTPEnteringScreen: View {
     @EnvironmentObject var router: RouterHW9
-    @ObservedObject private var pinTimer = OTPTimer()
+    @ObservedObject private var otpTimer = OTPTimer()
 
     @State private var containerSize: CGSize = .zero
     @State private var isKeyboardActive: Bool = false
     @State private var showWarningText: Bool = false
-    @State private var warningText: String = ""
+    @State private var warningString: String = ""
     
     var body: some View {
         VStack {
@@ -26,14 +26,12 @@ struct OTPEnteringScreen: View {
             
             headerTextSection
                 .padding(.bottom, containerSize ~ 49)
-                .transition(.fadeAndMove(edge: .top))
             
             pinField
                 .padding(.bottom, containerSize ~ 20)
 
             if showWarningText {
-                Text(warningText)
-                    .metaTextStyle(color: Color.theme.danger)
+                warningText
             }
             
             Spacer()
@@ -48,8 +46,17 @@ struct OTPEnteringScreen: View {
                 .ignoresSafeArea(.all)
         )
         .onAppear {
-            pinTimer.start(with: router.otpManager.remainingTime(forPhoneNumber: router.phoneNumber) ?? 0)
+            startTimer()
         }
+    }
+    
+    private func startTimer() {
+        otpTimer.start(with: router.otpManager.remainingTime(forPhoneNumber: router.phoneNumber) ?? 0)
+    }
+    
+    private func setWarning(for pin: String) {
+        showWarningText = pin.count == 4
+        warningString = otpTimer.remainingTime > 0 ? UI.Strings.incorrectCode : UI.Strings.codeExpired
     }
     
     private func verifyPin(pin: String, completion: (Bool) -> Void) {
@@ -58,9 +65,7 @@ struct OTPEnteringScreen: View {
         if isValid {
             completion(true)
         } else {
-            showWarningText = pin.count == 4
-            warningText = pinTimer.remainingTime > 0 ? UI.Strings.incorrectCode : UI.Strings.codeExpired
-            
+            setWarning(for: pin)
             completion(false)
         }
     }
@@ -76,6 +81,11 @@ extension OTPEnteringScreen {
         Text(UI.Strings.sendingCodeInfo + "\n" + router.phoneNumber)
             .infoTextStyle()
             .frame(width: 253)
+    }
+    
+    private var warningText: some View {
+        Text(warningString)
+            .metaTextStyle(color: Color.theme.danger)
     }
     
     private var headerTextSection: some View {
@@ -94,13 +104,13 @@ extension OTPEnteringScreen {
     
     private var requestCodeAgainButton: some View {
         Button(action: {
-            switch pinTimer.remainingTime {
+            switch otpTimer.remainingTime {
             case 0...:
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.error)
             default:
                 _ = router.otpManager.generateOTP(forPhoneNumber: router.phoneNumber)
-                pinTimer.start(with: router.otpManager.remainingTime(forPhoneNumber: router.phoneNumber) ?? 0)
+                startTimer()
             }
         }) {
             Text(UI.Strings.requestCodeAgain)
@@ -110,13 +120,13 @@ extension OTPEnteringScreen {
     }
     
     private var validTimer: some View {
-        Text("\(UI.Strings.requestCodeAgain) через: \(pinTimer.formattedTime)")
+        Text(UI.Strings.requestCodeAgain + "через: " + otpTimer.formattedTime)
             .metaTextStyle(color: Color.theme.disabled)
     }
 
     private var requestCodeText: some View {
         Group {
-            switch pinTimer.remainingTime {
+            switch otpTimer.remainingTime {
             case 0...:
                 validTimer
             default:

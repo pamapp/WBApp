@@ -28,22 +28,22 @@ struct VerificationScreen: View {
                     router.goBack()
                 }
             )
-            .padding(.bottom, containerSize.adaptiveVerticalPadding(79))
+            .padding(.bottom, containerSize ~ 79)
 
             if !isKeyboardActive {
                 headerTextSection
-                    .padding(.bottom, containerSize.adaptiveVerticalPadding(49))
+                    .padding(.bottom, containerSize ~ 49)
                     .transition(.fadeAndMove(edge: .top))
             }
 
             phoneInputSection
-                .padding(.bottom, containerSize.adaptiveVerticalPadding(32))
+                .padding(.bottom, containerSize ~ 32)
                 .padding(.horizontal, 24)
 
             Spacer()
 
             continueButton
-                .padding(.bottom, containerSize.adaptiveVerticalPadding(isKeyboardActive ? 60 : 20))
+                .padding(.bottom, containerSize ~ (isKeyboardActive ? 60 : 20))
                 .padding(.horizontal, 24)
         }
         .containerSizeGetter($containerSize)
@@ -90,7 +90,7 @@ extension VerificationScreen {
     }
     
     private var headerTextSection: some View {
-        VStack(spacing: containerSize.adaptiveVerticalPadding(10)) {
+        VStack(spacing: containerSize ~ 10) {
             headlineText
             infoText
         }
@@ -115,7 +115,7 @@ extension VerificationScreen {
                 isKeyboardActive = edit
             }
         })
-        .textFieldStyle(SimpleTextFieldStyle(height: containerSize.adaptiveVerticalPadding(36)))
+        .textFieldStyle(SimpleTextFieldStyle(height: containerSize ~ 36))
         .onChange(of: selectedCountry) { _ in
             formatPhoneNumberIfNeeded()
         }
@@ -125,7 +125,7 @@ extension VerificationScreen {
     }
     
     private var phoneInputSection: some View {
-        HStack(spacing: containerSize.adaptiveVerticalPadding(10)) {
+        HStack(spacing: containerSize ~ 10) {
             countryPicker
             phoneTextField
         }
@@ -134,6 +134,8 @@ extension VerificationScreen {
     private var continueButton: some View {
         Button(action: {
             if isButtonActive {
+                router.phoneNumber = phoneNumber
+                _ = router.otpManager.generateOTP(forPhoneNumber: router.phoneNumber)
                 router.push(.pinEntering)
             } else {
                 let generator = UINotificationFeedbackGenerator()
