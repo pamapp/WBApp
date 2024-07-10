@@ -26,7 +26,17 @@ struct InfoTextStyle: ViewModifier {
     }
 }
 
-struct PrimaryButtonTextStyle: ViewModifier {    
+struct MetaTextStyle: ViewModifier {
+    var color: Color
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.metadata1())
+            .foregroundColor(color)
+    }
+}
+
+struct PrimaryButtonTextStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.subheading2())
