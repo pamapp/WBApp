@@ -16,7 +16,10 @@ enum RouteHW9: Hashable {
 final class RouterHW9: ObservableObject {
     @Published var homeScreen: RouteHW9 = .walkthrought
     @Published var path = NavigationPath()
-    
+    @Published var phoneNumber = ""
+
+    var otpManager = OTPManager(otpValidityDuration: 10)
+
     func push(_ page: RouteHW9) {
         path.append(page)
     }
@@ -39,7 +42,7 @@ final class RouterHW9: ObservableObject {
             VerificationScreen()
                 .navigationBarBackButtonHidden()
         case .pinEntering:
-            PinEnteringScreen()
+            OTPEnteringScreen()
                 .navigationBarBackButtonHidden()
         }
     }
