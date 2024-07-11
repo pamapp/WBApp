@@ -35,6 +35,7 @@
 		913AE7442C3E8EAF005A0337 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7432C3E8EAF005A0337 /* OTPFieldView.swift */; };
 		913AE7482C3EAB86005A0337 /* OTPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7472C3EAB86005A0337 /* OTPTimer.swift */; };
 		913AE7492C3EFF34005A0337 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7412C3E8A46005A0337 /* OTPManager.swift */; };
+		913AE74C2C3FC4B5005A0337 /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE74B2C3FC4B5005A0337 /* RegistrationScreen.swift */; };
 		91524E732C37E4E6005EC33D /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91524E722C37E4E6005EC33D /* TextModifiers.swift */; };
 		91524E772C37F007005EC33D /* CountryCodesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91524E762C37F007005EC33D /* CountryCodesProvider.swift */; };
 		91524E852C3BE157005EC33D /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91524E842C3BE157005EC33D /* TextFieldStyles.swift */; };
@@ -126,6 +127,7 @@
 		913AE7412C3E8A46005A0337 /* OTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManager.swift; sourceTree = "<group>"; };
 		913AE7432C3E8EAF005A0337 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		913AE7472C3EAB86005A0337 /* OTPTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTimer.swift; sourceTree = "<group>"; };
+		913AE74B2C3FC4B5005A0337 /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
 		91524E722C37E4E6005EC33D /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		91524E762C37F007005EC33D /* CountryCodesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodesProvider.swift; sourceTree = "<group>"; };
 		91524E842C3BE157005EC33D /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				913AE7452C3EA04F005A0337 /* OTP */,
+				913AE74A2C3FC442005A0337 /* Registration */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,6 +379,14 @@
 				913AE7472C3EAB86005A0337 /* OTPTimer.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		913AE74A2C3FC442005A0337 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				913AE74B2C3FC4B5005A0337 /* RegistrationScreen.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		91524E752C37EFF6005EC33D /* View */ = {
@@ -627,6 +638,7 @@
 				91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */,
 				91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */,
 				91524E8E2C3BFA22005EC33D /* AnyTransition+Extensions.swift in Sources */,
+				913AE74C2C3FC4B5005A0337 /* RegistrationScreen.swift in Sources */,
 				91524E8C2C3BF90E005EC33D /* OTPEnteringScreen.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,

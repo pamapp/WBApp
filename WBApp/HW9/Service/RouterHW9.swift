@@ -11,6 +11,7 @@ enum RouteHW9: Hashable {
     case walkthrought
     case verification
     case pinEntering
+    case registration
 }
 
 final class RouterHW9: ObservableObject {
@@ -18,7 +19,7 @@ final class RouterHW9: ObservableObject {
     @Published var path = NavigationPath()
     @Published var phoneNumber = ""
 
-    var otpManager = OTPManager(otpValidityDuration: 10)
+    var otpManager = OTPManager(otpValidityDuration: 30)
 
     func push(_ page: RouteHW9) {
         path.append(page)
@@ -32,6 +33,11 @@ final class RouterHW9: ObservableObject {
         path.removeLast(path.count)
     }
     
+    func goBack(steps: Int) {
+         guard steps > 0, steps <= path.count else { return }
+         path.removeLast(steps)
+     }
+    
     @ViewBuilder
     func getPage(_ page: RouteHW9) -> some View {
         switch page {
@@ -43,6 +49,9 @@ final class RouterHW9: ObservableObject {
                 .navigationBarBackButtonHidden()
         case .pinEntering:
             OTPEnteringScreen()
+                .navigationBarBackButtonHidden()
+        case .registration:
+            RegistrationScreen()
                 .navigationBarBackButtonHidden()
         }
     }

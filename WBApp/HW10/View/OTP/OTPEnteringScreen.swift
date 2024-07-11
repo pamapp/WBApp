@@ -62,6 +62,7 @@ struct OTPEnteringScreen: View {
     private func verifyPin(pin: String, completion: (Bool) -> Void) {        
         if pin == (router.phoneNumber, router.otpManager) {
             completion(true)
+            router.push(.registration)
         } else {
             setWarning(for: pin)
             completion(false)
