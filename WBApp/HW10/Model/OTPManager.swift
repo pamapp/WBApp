@@ -18,7 +18,7 @@ struct OTPSequence: Sequence {
         self.phoneNumber = phoneNumber
         self.validTime = validTime
         self.startTime = Date()
-        self.generatedOTP = String(format: "%04d", arc4random_uniform(10000))
+        self.generatedOTP = String(format: "%04d", Int.random(in: 0..<10000))
 
         print("Сгенерированный OTP для \(phoneNumber): \(generatedOTP)") // Для отладки
     }
@@ -58,7 +58,7 @@ struct OTPManager {
         let otpSequence = OTPSequence(phoneNumber: phoneNumber, validTime: otpValidityDuration)
         otpSequences[phoneNumber] = otpSequence
         var iterator = otpSequence.makeIterator()
-        return iterator.next()!
+        return iterator.next() ?? ""
     }
 
     mutating func validateOTP(_ otp: String, forPhoneNumber phoneNumber: String) -> Bool {
