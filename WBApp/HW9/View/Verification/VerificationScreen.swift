@@ -134,7 +134,7 @@ extension VerificationScreen {
     private var continueButton: some View {
         Button(action: {
             if isButtonActive {
-                router.phoneNumber = phoneNumber
+                router.phoneNumber = CountryCodesProvider.phoneCode(for: selectedCountry) + " " + phoneNumber
                 _ = router.otpManager.generateOTP(forPhoneNumber: router.phoneNumber)
                 router.push(.pinEntering)
             } else {
