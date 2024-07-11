@@ -59,10 +59,8 @@ struct OTPEnteringScreen: View {
         warningString = otpTimer.remainingTime > 0 ? UI.Strings.incorrectCode : UI.Strings.codeExpired
     }
     
-    private func verifyPin(pin: String, completion: (Bool) -> Void) {
-        let isValid = router.otpManager.validateOTP(pin, forPhoneNumber: router.phoneNumber)
-        
-        if isValid {
+    private func verifyPin(pin: String, completion: (Bool) -> Void) {        
+        if pin == (router.phoneNumber, router.otpManager) {
             completion(true)
         } else {
             setWarning(for: pin)
@@ -120,7 +118,7 @@ extension OTPEnteringScreen {
     }
     
     private var validTimer: some View {
-        Text(UI.Strings.requestCodeAgain + "через: " + otpTimer.formattedTime)
+        Text(UI.Strings.requestCodeAgain + " " + UI.Strings.after + ": " + otpTimer.formattedTime)
             .metaTextStyle(color: Color.theme.disabled)
     }
 

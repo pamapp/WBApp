@@ -34,6 +34,7 @@
 		913AE7422C3E8A46005A0337 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7412C3E8A46005A0337 /* OTPManager.swift */; };
 		913AE7442C3E8EAF005A0337 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7432C3E8EAF005A0337 /* OTPFieldView.swift */; };
 		913AE7482C3EAB86005A0337 /* OTPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7472C3EAB86005A0337 /* OTPTimer.swift */; };
+		913AE7492C3EFF34005A0337 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7412C3E8A46005A0337 /* OTPManager.swift */; };
 		91524E732C37E4E6005EC33D /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91524E722C37E4E6005EC33D /* TextModifiers.swift */; };
 		91524E772C37F007005EC33D /* CountryCodesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91524E762C37F007005EC33D /* CountryCodesProvider.swift */; };
 		91524E852C3BE157005EC33D /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91524E842C3BE157005EC33D /* TextFieldStyles.swift */; };
@@ -650,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913AE7492C3EFF34005A0337 /* OTPManager.swift in Sources */,
 				9157F16B2C20772D00CF0EC2 /* Contact.swift in Sources */,
 				9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */,
 				9157F1722C20864000CF0EC2 /* WBApp_WidgetSmallView.swift in Sources */,

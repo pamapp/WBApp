@@ -22,6 +22,7 @@ enum UI {
         static let enterCode = "Введите код"
         static let sendingCodeInfo = "Отправили код на номер"
         static let requestCodeAgain = "Запросить код повторно"
+        static let after = "через"
         static let incorrectCode = "Неверный код"
         static let codeExpired = "Срок действия кода истек"
     }

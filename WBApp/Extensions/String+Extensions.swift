@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+infix operator == : ComparisonPrecedence
+
+extension String {
+    static func == (lhs: String, rhs: (String, OTPManager)) -> Bool {
+        var (phoneNumber, otpManager) = rhs
+        return otpManager.validateOTP(lhs, forPhoneNumber: phoneNumber)
+    }
+}
+
 extension String {
     var digits: [String] {
         return self.compactMap { $0.isNumber ? String($0) : "" }
