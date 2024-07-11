@@ -27,3 +27,12 @@ struct SimpleTextFieldStyle: TextFieldStyle {
     }
 }
 
+
+struct PinFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .accentColor(.clear)
+            .foregroundColor(.clear)
+            .keyboardType(.numberPad)
+    }
+}

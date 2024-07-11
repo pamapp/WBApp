@@ -37,4 +37,8 @@ extension View {
     func primaryButtonTextStyle() -> some View {
         self.modifier(PrimaryButtonTextStyle())
     }
+    
+    func metaTextStyle(color: Color) -> some View {
+        self.modifier(MetaTextStyle(color: color))
+    }
 }
