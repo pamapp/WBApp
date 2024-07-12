@@ -15,7 +15,6 @@ enum RouteHW9: Hashable {
 }
 
 final class RouterHW9: ObservableObject {
-    @Published var homeScreen: RouteHW9 = .walkthrought
     @Published var path = NavigationPath()
     @Published var phoneNumber = ""
 
