@@ -36,7 +36,9 @@ struct ContainerSizeModifier: ViewModifier {
                 Color.clear
                     .onAppear {
                         if size == .zero {
-                            size = geo.size
+                            DispatchQueue.main.async {
+                                size = geo.size
+                            }
                         }
                     }
             }
