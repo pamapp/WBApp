@@ -136,17 +136,6 @@
         }
       }
     },
-    "incorrectCode" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Incorrect code"
-          }
-        }
-      }
-    },
     "infoText" : {
       "extractionState" : "manual",
       "localizations" : {

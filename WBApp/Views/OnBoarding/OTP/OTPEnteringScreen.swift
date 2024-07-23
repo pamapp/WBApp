@@ -57,7 +57,7 @@ struct OTPEnteringScreen: View {
     
     private func setWarning(for pin: String) {
         showWarningText = pin.count == 4
-        warningString = otpTimer.remainingTime > 0 ? UI.Strings.incorrectCode : UI.Strings.codeExpired
+        warningString = otpTimer.remainingTime > 0 ? UI.Strings.invalidCode : UI.Strings.codeExpired
     }
     
     private func verifyPin(pin: String, completion: (Bool) -> Void) {        

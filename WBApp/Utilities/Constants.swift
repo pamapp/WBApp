@@ -22,7 +22,7 @@ enum UI {
         static var sendingCodeInfo: String { localizedString(for: .sendingCodeInfo) }
         static var requestCodeAgain: String { localizedString(for: .requestCodeAgain) }
         static var after: String { localizedString(for: .after) }
-        static var incorrectCode: String { localizedString(for: .incorrectCode) }
+        static var invalidCode: String { localizedString(for: .invalidCode) }
         static var codeExpired: String { localizedString(for: .codeExpired) }
         
         static func localizedString(for key: LocalizationKeys) -> String {
