@@ -59,6 +59,7 @@
 		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 		9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */; };
 		9188BD1B2C35EFFF000DB4A7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */; };
+		91BEDD342C58FC8F000B99F8 /* ClientServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BEDD332C58FC8F000B99F8 /* ClientServer.swift */; };
 		91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D377CB2C2F152E005503C2 /* ContactsScreen.swift */; };
 		91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E062C36AFD200D8C23E /* DateProvider.swift */; };
 		91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E072C36AFD200D8C23E /* DatesScreen.swift */; };
@@ -142,6 +143,7 @@
 		9157F1852C25704300CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
 		9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		91BEDD332C58FC8F000B99F8 /* ClientServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServer.swift; sourceTree = "<group>"; };
 		91D377CB2C2F152E005503C2 /* ContactsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
 		91EB7E062C36AFD200D8C23E /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		91EB7E072C36AFD200D8C23E /* DatesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesScreen.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		912D551A2C0FAFBA004DA582 = {
 			isa = PBXGroup;
 			children = (
+				91BEDD312C58FBA1000B99F8 /* HW15 */,
 				915279A92C414C28002594D9 /* HW11 */,
 				91EB7E102C36B40500D8C23E /* HW7 */,
 				91EB7E092C36AFD200D8C23E /* HW6 */,
@@ -405,6 +408,14 @@
 				9126C1F42C4E60E800DC3E5F /* Intents.intentdefinition */,
 			);
 			path = Intents;
+			sourceTree = "<group>";
+		};
+		91BEDD312C58FBA1000B99F8 /* HW15 */ = {
+			isa = PBXGroup;
+			children = (
+				91BEDD332C58FC8F000B99F8 /* ClientServer.swift */,
+			);
+			path = HW15;
 			sourceTree = "<group>";
 		};
 		91EB7E092C36AFD200D8C23E /* HW6 */ = {
@@ -589,6 +600,7 @@
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
 				91EB7E112C36B40500D8C23E /* InfinityScrollView.swift in Sources */,
+				91BEDD342C58FC8F000B99F8 /* ClientServer.swift in Sources */,
 				91524E8A2C3BF535005EC33D /* RouterHW9.swift in Sources */,
 				9125957C2C1CDD110053D7FC /* Contact.swift in Sources */,
 				912595A72C1DAB260053D7FC /* SocialLinksView.swift in Sources */,
