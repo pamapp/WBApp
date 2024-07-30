@@ -56,6 +56,36 @@ struct ContactDetailView: View {
 }
 
 extension ContactDetailView {
+    private var defaultAvatar: some View {
+        Circle()
+            .fill(Color.theme.offWhite)
+            .frame(width: Constants.circleSize, height: Constants.circleSize)
+            .overlay(
+                Image(UI.Icons.avatar)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: Constants.iconHeight)
+            )
+    }
+    
+    private var contactImageView: some View {
+        AsyncImageView(url: contact.imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: Constants.circleSize, height: Constants.circleSize)
+                    .clipShape(Circle())
+            case .loading:
+                ProgressView()
+                    .frame(width: Constants.circleSize, height: Constants.circleSize)
+            case .failed:
+                defaultAvatar
+            }
+        }
+    }
+    
     private var contactNameView: some View {
         Text(contact.name)
             .font(.subheading1())
@@ -70,25 +100,5 @@ extension ContactDetailView {
                 .foregroundColor(Color.theme.disabled)
         }
     }
-    
-    @ViewBuilder
-    private var contactImageView: some View {
-        switch contact.imageName {
-        case .some(let imageName):
-            Image(imageName)
-                .resizable()
-                .frame(width: Constants.circleSize, height: Constants.circleSize)
-                .clipShape(Circle())
-        case nil:
-            Circle()
-                .frame(width: Constants.circleSize, height: Constants.circleSize)
-                .foregroundStyle(Color.theme.offWhite)
-                .overlay(
-                    Image(UI.Icons.avatar)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: Constants.iconHeight)
-                )
-        }
-    }
 }
+

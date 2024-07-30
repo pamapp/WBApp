@@ -12,6 +12,7 @@ struct Contact: Identifiable, Hashable {
     let id = UUID()
     var name: String = ""
     var imageName: String?
+    var imageURL: URL?
     var lastSeen: Date = .init()
     var isStory: Bool = true
     var links: [SocialLink] = []

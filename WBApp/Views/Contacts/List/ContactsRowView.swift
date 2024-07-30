@@ -26,7 +26,7 @@ struct ContactRowView: View {
             ContactAvatarView(isOnline: contact.isOnline,
                               isStory: contact.isStory,
                               initials: contact.name.initials,
-                              imageName: contact.imageName)
+                              imageURL: contact.imageURL)
             contactInfoView
             Spacer()
         }
