@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 extension ContactAvatarView {
     private enum Constants {
@@ -22,7 +23,7 @@ struct ContactAvatarView: View {
     @State var isOnline: Bool
     @State var isStory: Bool
     @State var initials: String
-    @State var imageName: String?
+    @State var imageURL: URL?
 
     var body: some View {
         ZStack {
@@ -34,13 +35,42 @@ struct ContactAvatarView: View {
 }
 
 extension ContactAvatarView {
+    private var defaultAvatar: some View {
+        RoundedRectangle(cornerRadius: Constants.strokeCornerRadius - 2)
+            .fill(Color.theme.defaultColor)
+            .frame(width: Constants.avatarSize, height: Constants.avatarSize)
+            .overlay(
+                Text(initials)
+                    .foregroundColor(.white)
+                    .font(.system(size: 14, weight: .bold))
+            )
+    }
+    
+    private var avatarImage: some View {
+        AsyncImageView(url: imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: Constants.avatarSize, height: Constants.avatarSize)
+                    .clipShape(RoundedRectangle(cornerRadius: Constants.strokeCornerRadius - 2))
+            case .loading:
+                ProgressView()
+                    .frame(width: Constants.avatarSize, height: Constants.avatarSize)
+            case .failed:
+                defaultAvatar
+            }
+        }
+    }
+    
     @ViewBuilder
     private var storyBorder: some View {
         switch isStory {
         case true:
             RoundedRectangle(cornerRadius: Constants.strokeCornerRadius)
                 .stroke(
-                    imageName != nil ? LinearGradient.blueGradient : LinearGradient.purpleGradient,
+                    imageURL != nil ? LinearGradient.blueGradient : LinearGradient.purpleGradient,
                     lineWidth: Constants.strokeBorderWidth
                 )
                 .frame(width: Constants.imageSize, height: Constants.imageSize)
@@ -51,27 +81,6 @@ extension ContactAvatarView {
                     lineWidth: Constants.strokeBorderWidth
                 )
                 .frame(width: Constants.imageSize, height: Constants.imageSize)
-        }
-    }
-    
-    @ViewBuilder
-    private var avatarImage: some View {
-        switch imageName {
-        case .some(let imageName):
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: Constants.avatarSize, height: Constants.avatarSize)
-                .clipShape(RoundedRectangle(cornerRadius: Constants.strokeCornerRadius - 2))
-        case nil:
-            RoundedRectangle(cornerRadius: Constants.strokeCornerRadius - 2)
-                .fill(Color.theme.defaultColor)
-                .frame(width: Constants.avatarSize, height: Constants.avatarSize)
-                .overlay(
-                    Text(initials)
-                        .foregroundColor(.white)
-                        .font(.system(size: 14, weight: .bold))
-                )
         }
     }
     

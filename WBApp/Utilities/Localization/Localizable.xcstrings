@@ -31,6 +31,9 @@
         }
       }
     },
+    "Chats" : {
+
+    },
     "codeExpired" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -246,6 +249,9 @@
           }
         }
       }
+    },
+    "Settings" : {
+
     },
     "Spell Out" : {
 

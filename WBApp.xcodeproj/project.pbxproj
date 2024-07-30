@@ -250,8 +250,8 @@
 		9126C1F12C4E5EE800DC3E5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9157F1672C20766100CF0EC2 /* SharedData.swift */,
 				9125957B2C1CDD110053D7FC /* Contact.swift */,
+				9157F1672C20766100CF0EC2 /* SharedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
