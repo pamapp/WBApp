@@ -15,6 +15,26 @@ extension View {
 
 extension View {
     func containerSizeGetter(_ size: Binding<CGSize>) -> some View {
-        modifier(ContainerSizeModifier(size: size))
+        self.modifier(ContainerSizeModifier(size: size))
+    }
+}
+
+extension View {
+    func countryPickerStyle(containerSize: CGSize, selectedCountry: String) -> some View {
+        self.modifier(CountryPickerStyle(containerSize: containerSize, selectedCountry: selectedCountry))
+    }
+}
+
+extension View {
+    func headlineTextStyle() -> some View {
+        self.modifier(HeadlineTextStyle())
+    }
+    
+    func infoTextStyle() -> some View {
+        self.modifier(InfoTextStyle())
+    }
+    
+    func primaryButtonTextStyle() -> some View {
+        self.modifier(PrimaryButtonTextStyle())
     }
 }

@@ -8,34 +8,32 @@
 import SwiftUI
 
 struct WalkthroughView: View {
+    @EnvironmentObject var router: RouterHW9
     @State private var isUserAgreementPresented: Bool = false
-    @State private var isStartSheetPresented: Bool = false
+    @State private var isVerificationPresented: Bool = false
+    @State private var containerSize: CGSize = .zero
     
     var body: some View {
-        GeometryReader { geo in
-            VStack(alignment: .center, spacing: 0) {
-                Spacer()
-                    .frame(height: geo.safeAreaInsets.top + geo.adaptiveVerticalPadding(45))
-
-                illustrationView
-                    .padding(.bottom, geo.adaptiveVerticalPadding(45))
-                
-                headlineText
-                
-                Spacer()
-                
-                userAgreementButton
-                    .padding(.bottom, geo.adaptiveVerticalPadding(18))
-                
-                startChatButton
-                    .padding(.horizontal, geo.adaptiveVerticalPadding(24))
-                    .padding(.bottom, geo.adaptiveVerticalPadding(20))
-                    .sheet(isPresented: $isStartSheetPresented) {
-                        dismissButton
-                    }
-            }
-            .background(Color.theme.white)
+        VStack(alignment: .center, spacing: 0) {
+            Spacer()
+                .frame(height: containerSize.adaptiveVerticalPadding(50))
+            
+            illustrationView
+                .padding(.bottom, containerSize.adaptiveVerticalPadding(45))
+            
+            headlineText
+            
+            Spacer()
+            
+            userAgreementButton
+                .padding(.bottom, containerSize.adaptiveVerticalPadding(18))
+            
+            startChatButton
+                .padding(.horizontal, containerSize.adaptiveVerticalPadding(24))
+                .padding(.bottom, containerSize.adaptiveVerticalPadding(20))
         }
+        .background(Color.theme.white)
+        .containerSizeGetter($containerSize)
     }
 }
 
@@ -49,9 +47,7 @@ extension WalkthroughView {
     
     private var headlineText: some View {
         Text(UI.Strings.walkthrought_text)
-            .font(.heading2())
-            .foregroundColor(Color.theme.active)
-            .multilineTextAlignment(.center)
+            .headlineTextStyle()
             .frame(width: 279)
     }
     
@@ -66,21 +62,11 @@ extension WalkthroughView {
     }
     
     private var startChatButton: some View {
-        Button(action: { self.isStartSheetPresented.toggle() }) {
+        Button(action: { router.push(.verification) }) {
             Text(UI.Strings.startChating)
-                .font(.subheading2())
-                .foregroundColor(Color.theme.offWhite)
-                .frame(maxWidth: .infinity)
+                .primaryButtonTextStyle()
         }
         .buttonStyle(PrimaryButtonStyle())
-    }
-    
-    private var dismissButton: some View {
-        Button(action: { self.isStartSheetPresented.toggle() }) {
-            Text(UI.Strings.dismiss)
-                .font(.bodyText1())
-                .foregroundColor(Color.theme.active)
-        }
     }
 }
 

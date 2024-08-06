@@ -9,20 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var router = Router()
-    
+    @StateObject private var routerHW9 = RouterHW9()
+
     var body: some View {
-        TabBarView(tabs: [
-            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsScreen()), route: .contacts),
-            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(Text("Chats")), route: .chat),
-            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
-        ])
-        .environmentObject(router)
-        .onAppear {
-            setupNotifications()
+        NavigationStack(path: $routerHW9.path) {
+            routerHW9.getPage(.walkthrought)
+                .navigationDestination(for: RouteHW9.self) { page in
+                    routerHW9.getPage(page)
+                }
         }
-        .onOpenURL { url in
-            handleDeepLink(url: url)
-        }
+        .environmentObject(routerHW9)
+        
+//        TabBarView(tabs: [
+//            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsScreen()), route: .contacts),
+//            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(Text("Chats")), route: .chat),
+//            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
+//        ])
+//        .environmentObject(router)
+//        .onAppear {
+//            setupNotifications()
+//        }
+//        .onOpenURL { url in
+//            handleDeepLink(url: url)
+//        }
     }
 }
 
