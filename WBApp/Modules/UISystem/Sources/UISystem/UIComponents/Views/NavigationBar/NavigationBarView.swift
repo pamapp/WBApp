@@ -13,13 +13,24 @@ public struct NavigationBarView: View {
     var trailingIcon: String?
     var leadingAction: (() -> ())?
     var trailingAction: (() -> ())?
+    var additionalTrailingIcon: String?
+    var additionalTrailingAction: (() -> Void)?
     
-    public init(title: String? = nil, leadingIcon: String? = nil, trailingIcon: String? = nil, leadingAction: ( () -> Void)? = nil, trailingAction: ( () -> Void)? = nil) {
+    public init(title: String? = nil, 
+                leadingIcon: String? = nil,
+                trailingIcon: String? = nil,
+                additionalTrailingIcon: String? = nil,
+                leadingAction: ( () -> Void)? = nil,
+                trailingAction: ( () -> Void)? = nil,
+                additionalTrailingAction: ( () -> Void)? = nil
+    ) {
         self.title = title
         self.leadingIcon = leadingIcon
         self.trailingIcon = trailingIcon
         self.leadingAction = leadingAction
         self.trailingAction = trailingAction
+        self.additionalTrailingIcon = additionalTrailingIcon
+        self.additionalTrailingAction = additionalTrailingAction
     }
     
     public var body: some View {
@@ -44,7 +55,13 @@ public struct NavigationBarView: View {
                 Button(action: { trailingAction() }, label: {
                     getImage(named: trailingIcon)
                         .foregroundColor(Color.theme.active)
-                        .padding(.trailing, 8)
+                })
+            }
+            
+            if let additionalTrailingIcon, let additionalTrailingAction {
+                Button(action: { additionalTrailingAction() }, label: {
+                    getImage(named: additionalTrailingIcon)
+                        .foregroundColor(Color.theme.active)
                 })
             }
         }

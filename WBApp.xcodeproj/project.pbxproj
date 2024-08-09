@@ -59,6 +59,14 @@
 		9157F17C2C209EFD00CF0EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125959A2C1D7F710053D7FC /* String+Extensions.swift */; };
 		9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */; };
 		9188BD1B2C35EFFF000DB4A7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */; };
+		919699E12C623E2A0028528E /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = 919699E02C623E2A0028528E /* ExyteChat */; };
+		919699E62C623E580028528E /* PersonalChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E52C623E580028528E /* PersonalChatView.swift */; };
+		919699E82C623E600028528E /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E72C623E600028528E /* CustomInputView.swift */; };
+		919699EA2C624DA10028528E /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E92C624DA10028528E /* ChatMessageView.swift */; };
+		91A080962C64F71300D469EF /* RecordWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A080952C64F71200D469EF /* RecordWaveView.swift */; };
+		91A080982C64F73500D469EF /* RecordingPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A080972C64F73500D469EF /* RecordingPlayer.swift */; };
+		91A0809A2C664E6E00D469EF /* ReplyMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A080992C664E6D00D469EF /* ReplyMessageView.swift */; };
+		91A0809E2C6656F600D469EF /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A0809D2C6656F600D469EF /* ChatViewModel.swift */; };
 		91BEDD342C58FC8F000B99F8 /* ClientServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BEDD332C58FC8F000B99F8 /* ClientServer.swift */; };
 		91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D377CB2C2F152E005503C2 /* ContactsScreen.swift */; };
 		91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB7E062C36AFD200D8C23E /* DateProvider.swift */; };
@@ -143,6 +151,13 @@
 		9157F1852C25704300CF0EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
 		9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		919699E52C623E580028528E /* PersonalChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalChatView.swift; sourceTree = "<group>"; };
+		919699E72C623E600028528E /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		919699E92C624DA10028528E /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
+		91A080952C64F71200D469EF /* RecordWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWaveView.swift; sourceTree = "<group>"; };
+		91A080972C64F73500D469EF /* RecordingPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPlayer.swift; sourceTree = "<group>"; };
+		91A080992C664E6D00D469EF /* ReplyMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyMessageView.swift; sourceTree = "<group>"; };
+		91A0809D2C6656F600D469EF /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		91BEDD332C58FC8F000B99F8 /* ClientServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServer.swift; sourceTree = "<group>"; };
 		91D377CB2C2F152E005503C2 /* ContactsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
 		91EB7E062C36AFD200D8C23E /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
@@ -160,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				919699E12C623E2A0028528E /* ExyteChat in Frameworks */,
 				911DB9BB2C49344300468F34 /* UISystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +212,7 @@
 				9126C1F92C4E689F00DC3E5F /* Shared */,
 				9126C1EF2C4E5E8200DC3E5F /* OnBoarding */,
 				912595952C1D7E5A0053D7FC /* Contacts */,
+				919699E22C623E3B0028528E /* Chats */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,14 +320,14 @@
 				9157F1852C25704300CF0EC2 /* Info.plist */,
 				912D55262C0FAFBA004DA582 /* WBAppApp.swift */,
 				912D55282C0FAFBA004DA582 /* ContentView.swift */,
-				9126C1F12C4E5EE800DC3E5F /* Models */,
 				9126C1F02C4E5ECA00DC3E5F /* Services */,
+				9126C1F12C4E5EE800DC3E5F /* Models */,
 				9125957E2C1CDD490053D7FC /* Views */,
 				910B9FDF2C14EA4600A10CFA /* Extensions */,
 				91F4B3592C4F8E1E00ED06F6 /* Utilities */,
 				9147BA002C47D43100B14601 /* Modules */,
-				912D552A2C0FAFBC004DA582 /* Assets.xcassets */,
 				9157F1862C25705F00CF0EC2 /* Intents */,
+				912D552A2C0FAFBC004DA582 /* Assets.xcassets */,
 				912D552C2C0FAFBC004DA582 /* Preview Content */,
 			);
 			path = WBApp;
@@ -322,6 +339,14 @@
 				912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9134666F2C66B4FA005A8B04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91A0809D2C6656F600D469EF /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		913AE7452C3EA04F005A0337 /* OTP */ = {
@@ -410,6 +435,44 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
+		919699E22C623E3B0028528E /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				919699E52C623E580028528E /* PersonalChatView.swift */,
+				919699EB2C6392B50028528E /* MessageView */,
+				919699EC2C6392C30028528E /* InputView */,
+				9134666F2C66B4FA005A8B04 /* ViewModel */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		919699EB2C6392B50028528E /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				919699E92C624DA10028528E /* ChatMessageView.swift */,
+				91A080992C664E6D00D469EF /* ReplyMessageView.swift */,
+				91A080942C64F70300D469EF /* RecordWave */,
+			);
+			path = MessageView;
+			sourceTree = "<group>";
+		};
+		919699EC2C6392C30028528E /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				919699E72C623E600028528E /* CustomInputView.swift */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		91A080942C64F70300D469EF /* RecordWave */ = {
+			isa = PBXGroup;
+			children = (
+				91A080952C64F71200D469EF /* RecordWaveView.swift */,
+				91A080972C64F73500D469EF /* RecordingPlayer.swift */,
+			);
+			path = RecordWave;
+			sourceTree = "<group>";
+		};
 		91BEDD312C58FBA1000B99F8 /* HW15 */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +546,7 @@
 			name = WBApp;
 			packageProductDependencies = (
 				911DB9BA2C49344300468F34 /* UISystem */,
+				919699E02C623E2A0028528E /* ExyteChat */,
 			);
 			productName = WBApp;
 			productReference = 912D55232C0FAFBA004DA582 /* WBApp.app */;
@@ -536,6 +600,9 @@
 				ru,
 			);
 			mainGroup = 912D551A2C0FAFBA004DA582;
+			packageReferences = (
+				919699DF2C623E2A0028528E /* XCRemoteSwiftPackageReference "Chat" */,
+			);
 			productRefGroup = 912D55242C0FAFBA004DA582 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -581,25 +648,31 @@
 				912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */,
 				9126C1F82C4E665D00DC3E5F /* TabBarView.swift in Sources */,
 				9124196B2C414CEE006C3078 /* StringHashing.swift in Sources */,
+				91A0809A2C664E6E00D469EF /* ReplyMessageView.swift in Sources */,
 				91EB7E0C2C36AFD200D8C23E /* StringInterpolation+Extensions.swift in Sources */,
+				919699EA2C624DA10028528E /* ChatMessageView.swift in Sources */,
 				913AE7482C3EAB86005A0337 /* OTPTimer.swift in Sources */,
 				91524E772C37F007005EC33D /* CountryCodesProvider.swift in Sources */,
 				9157F1682C20766100CF0EC2 /* SharedData.swift in Sources */,
 				9157F1882C25709A00CF0EC2 /* ChatsIntent.swift in Sources */,
 				912595892C1CDDCF0053D7FC /* ContactDetailView.swift in Sources */,
 				91F4B35E2C4F99BD00ED06F6 /* Constants.swift in Sources */,
+				91A080962C64F71300D469EF /* RecordWaveView.swift in Sources */,
 				91D377CC2C2F152E005503C2 /* ContactsScreen.swift in Sources */,
 				91EB7E142C36B62F00D8C23E /* VerificationScreen.swift in Sources */,
 				9126C1F52C4E60E800DC3E5F /* Intents.intentdefinition in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
+				919699E82C623E600028528E /* CustomInputView.swift in Sources */,
 				91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */,
 				91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */,
+				91A0809E2C6656F600D469EF /* ChatViewModel.swift in Sources */,
 				91524E8E2C3BFA22005EC33D /* AnyTransition+Extensions.swift in Sources */,
 				913AE74C2C3FC4B5005A0337 /* RegistrationScreen.swift in Sources */,
 				91524E8C2C3BF90E005EC33D /* OTPEnteringScreen.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
 				912595852C1CDDBB0053D7FC /* ContactsListView.swift in Sources */,
 				91EB7E112C36B40500D8C23E /* InfinityScrollView.swift in Sources */,
+				919699E62C623E580028528E /* PersonalChatView.swift in Sources */,
 				91BEDD342C58FC8F000B99F8 /* ClientServer.swift in Sources */,
 				91524E8A2C3BF535005EC33D /* RouterHW9.swift in Sources */,
 				9125957C2C1CDD110053D7FC /* Contact.swift in Sources */,
@@ -608,6 +681,7 @@
 				912D55272C0FAFBA004DA582 /* WBAppApp.swift in Sources */,
 				912595872C1CDDC50053D7FC /* ContactsRowView.swift in Sources */,
 				9125958F2C1D743E0053D7FC /* View+Extensions.swift in Sources */,
+				91A080982C64F73500D469EF /* RecordingPlayer.swift in Sources */,
 				912595A42C1D97C80053D7FC /* ContactAvatarView.swift in Sources */,
 				912419702C414D85006C3078 /* SetOperations.swift in Sources */,
 				910B9FD72C14EA2800A10CFA /* WalkthroughScreen.swift in Sources */,
@@ -924,6 +998,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		919699DF2C623E2A0028528E /* XCRemoteSwiftPackageReference "Chat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Chat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		911DB9BA2C49344300468F34 /* UISystem */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -932,6 +1017,11 @@
 		911DB9BE2C49344C00468F34 /* UISystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UISystem;
+		};
+		919699E02C623E2A0028528E /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 919699DF2C623E2A0028528E /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

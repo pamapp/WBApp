@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var router = Router()
-    @StateObject private var routerHW9 = RouterHW9()
+    @StateObject private var router: Router = .init()
+    @StateObject private var routerHW9: RouterHW9 = .init()
 
     var body: some View {
 //        NavigationStack(path: $routerHW9.path) {
@@ -20,12 +20,15 @@ struct ContentView: View {
 //        }
 //        .environmentObject(routerHW9)
         
-        TabBarView(tabs: [
-            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsScreen()), route: .contacts),
-            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(Text("Chats")), route: .chat),
-            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
-        ])
+//        TabBarView(tabs: [
+//            TabItem(title: "Контакты", imageName: "group", view: AnyView(ContactsScreen()), route: .contacts),
+//            TabItem(title: "Чаты", imageName: "message_circle", view: AnyView(PersonalChatView()), route: .chat),
+//            TabItem(title: "Ещё", imageName: "more_horizontal", view: AnyView(Text("Settings")), route: .settings)
+//        ])
+        
+        PersonalChatView()
         .environmentObject(router)
+        
         .onAppear {
             setupNotifications()
         }
