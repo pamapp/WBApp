@@ -1,10 +1,3 @@
-//
-//  PersonalChatView.swift
-//  WBApp
-//
-//  Created by Alina Potapova on 05.08.2024.
-//
-
 import SwiftUI
 import UISystem
 import ExyteChat
@@ -12,7 +5,7 @@ import ExyteChat
 struct PersonalChatView: View {
     @FocusState private var isInputFocused: Bool
     @StateObject private var vm: ChatVM
-
+    
     init(vm: ChatVM = ChatVM()) {
         _vm = StateObject(wrappedValue: vm)
     }
@@ -28,38 +21,16 @@ struct PersonalChatView: View {
                 trailingAction: {},
                 additionalTrailingAction: {}
             )
-
-            ChatView(messages: vm.messages, chatType: .conversation) { draft in
-                if !draft.text.isEmpty || !draft.medias.isEmpty || draft.recording != nil {
-                    Task {
-                        await vm.send(draft: draft)
-                    }
-                }
-            } messageBuilder: { message, positionInGroup, positionInCommentsGroup, showContextMenuClosure, messageActionClosure, showAttachmentClosure in
-                ChatMessageView(message: message, positionInUserGroup: positionInGroup)
-                    .onTapGesture {
-                        isInputFocused = false
-                    }
-            } inputViewBuilder: { textBinding, attachments, inputViewState, inputViewStyle, inputViewActionClosure, dissmissKeyboardClosure in
-                CustomInputView(text: textBinding,
-                                attachments: attachments,
-                                inputViewStyle: inputViewStyle,
-                                inputViewState: inputViewState,
-                                inputViewActionClosure: inputViewActionClosure
-                )
-                .focused($isInputFocused)
-            } messageMenuAction: { (action: DefaultMessageMenuAction, defaultActionClosure, message) in
-                switch action {
-                case .reply:
-                    defaultActionClosure(message, .reply)
-                    isInputFocused = true
-                case .edit:
-                    ()
-                }
-            }
-            .headerBuilder({ date in
-                chatHeaderView(with: date)
-            })
+            
+            ChatView(
+                messages: vm.messages,
+                chatType: .conversation,
+                didSendMessage: sendDraft,
+                messageBuilder: messageViewBuilder,
+                inputViewBuilder: inputViewBuilder,
+                messageMenuAction: messageMenuAction
+            )
+            .headerBuilder(chatHeaderView)
             .chatTheme(colors: ChatTheme.Colors(
                 mainBackground: Color.theme.offWhite
             ))
@@ -69,6 +40,40 @@ struct PersonalChatView: View {
 }
 
 extension PersonalChatView {
+    @ViewBuilder
+    private func messageViewBuilder(
+        message: Message,
+        positionInGroup: PositionInUserGroup,
+        positionInCommentsGroup: CommentsPosition?,
+        showContextMenuClosure: @escaping () -> Void,
+        messageActionClosure: @escaping (Message, DefaultMessageMenuAction) -> Void,
+        showAttachmentClosure: @escaping (Attachment) -> Void
+    ) -> some View {
+        ChatMessageView(message: message, positionInUserGroup: positionInGroup)
+            .onTapGesture {
+                isInputFocused = false
+            }
+    }
+    
+    @ViewBuilder
+    private func inputViewBuilder(
+        textBinding: Binding<String>,
+        attachments: InputViewAttachments,
+        inputViewState: InputViewState,
+        inputViewStyle: InputViewStyle,
+        inputViewActionClosure: @escaping (InputViewAction) -> Void,
+        dismissKeyboardClosure: ()->()
+    ) -> some View {
+        CustomInputView(
+            text: textBinding,
+            attachments: attachments,
+            inputViewStyle: inputViewStyle,
+            inputViewState: inputViewState,
+            inputViewActionClosure: inputViewActionClosure
+        )
+        .focused($isInputFocused)
+    }
+    
     @ViewBuilder
     private func chatHeaderView(with date: Date) -> some View {
         HStack(spacing: 16) {
@@ -84,6 +89,29 @@ extension PersonalChatView {
     }
 }
 
+extension PersonalChatView {
+    private func sendDraft(draft: DraftMessage) {
+        if !draft.text.isEmpty || !draft.medias.isEmpty || draft.recording != nil {
+            Task {
+                await vm.send(draft: draft)
+            }
+        }
+    }
+
+    private func messageMenuAction(
+        action: DefaultMessageMenuAction,
+        defaultActionClosure: (Message, DefaultMessageMenuAction) -> Void,
+        message: Message
+    ) {
+        switch action {
+        case .reply:
+            defaultActionClosure(message, .reply)
+            isInputFocused = true
+        case .edit:
+            ()
+        }
+    }
+}
 
 #Preview {
     PersonalChatView()

@@ -13,13 +13,10 @@ extension ChatMessageView {
     private enum Constants {
         static var replyLineLimit: Int = 10
         static var fontSize: CGFloat = 14
-
         static var imageSize: (width: CGFloat, height: CGFloat) = (281, 150)
-        static var imageCornerRadius: CGFloat = 16
-
+        static var imageCornerRadius: CGFloat = 4
         static var recordingPadding: CGFloat = 16
         static var recordingCornerRadius: CGFloat = 16
-
         static var spacing: CGFloat = 12
         static var padding: CGFloat = 10
         static var topCornerRadius: CGFloat = 16
@@ -54,11 +51,11 @@ struct ChatMessageView: View {
         isCurrentUser ? .trailing : .leading
     }
     
-    private var paddingLeading: CGFloat {
+    private var leadingPadding: CGFloat {
         isCurrentUser ? 77 : 16
     }
     
-    private var paddingTrailing: CGFloat {
+    private var trailingPadding: CGFloat {
         isCurrentUser ? 16 : 77
     }
     
@@ -124,8 +121,8 @@ struct ChatMessageView: View {
         )
         .padding(.top, topPadding)
         .padding(.bottom, bottomPadding)
-        .padding(.leading, paddingLeading)
-        .padding(.trailing, paddingTrailing)
+        .padding(.leading, leadingPadding)
+        .padding(.trailing, trailingPadding)
         .frame(maxWidth: .infinity, alignment: messageAlignment)
     }
 }
@@ -155,22 +152,11 @@ extension ChatMessageView {
     @ViewBuilder
     private var imagesView: some View {
         if !message.attachments.isEmpty {
-            ForEach(message.attachments, id: \.id) { at in
-                AsyncImage(url: at.thumbnail) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                            .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: Constants.imageSize.width, height: Constants.imageSize.height)
-                            .clipShape(RoundedRectangle(cornerRadius: Constants.imageCornerRadius))
-                    default:
-                        Image(systemName: "cross")
-                    }
-                }
+            ForEach(message.attachments, id: \.id) { attachment in
+                AttachmentImageView(attachment: attachment,
+                                    imageSize: Constants.imageSize,
+                                    cornerRadius: Constants.imageCornerRadius
+                )
             }
         }
     }

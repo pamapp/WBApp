@@ -33,6 +33,7 @@
 		912D55292C0FAFBA004DA582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D55282C0FAFBA004DA582 /* ContentView.swift */; };
 		912D552B2C0FAFBC004DA582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552A2C0FAFBC004DA582 /* Assets.xcassets */; };
 		912D552E2C0FAFBC004DA582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */; };
+		913466722C67856B005A8B04 /* AttachmentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913466712C67856B005A8B04 /* AttachmentImageView.swift */; };
 		913AE7422C3E8A46005A0337 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7412C3E8A46005A0337 /* OTPManager.swift */; };
 		913AE7482C3EAB86005A0337 /* OTPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7472C3EAB86005A0337 /* OTPTimer.swift */; };
 		913AE74C2C3FC4B5005A0337 /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE74B2C3FC4B5005A0337 /* RegistrationScreen.swift */; };
@@ -129,6 +130,7 @@
 		912D55282C0FAFBA004DA582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		912D552A2C0FAFBC004DA582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912D552D2C0FAFBC004DA582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		913466712C67856B005A8B04 /* AttachmentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentImageView.swift; sourceTree = "<group>"; };
 		913AE7412C3E8A46005A0337 /* OTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManager.swift; sourceTree = "<group>"; };
 		913AE7472C3EAB86005A0337 /* OTPTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTimer.swift; sourceTree = "<group>"; };
 		913AE74B2C3FC4B5005A0337 /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
@@ -349,6 +351,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		913466702C678509005A8B04 /* Attachments */ = {
+			isa = PBXGroup;
+			children = (
+				913466712C67856B005A8B04 /* AttachmentImageView.swift */,
+			);
+			path = Attachments;
+			sourceTree = "<group>";
+		};
 		913AE7452C3EA04F005A0337 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,7 +461,8 @@
 			children = (
 				919699E92C624DA10028528E /* ChatMessageView.swift */,
 				91A080992C664E6D00D469EF /* ReplyMessageView.swift */,
-				91A080942C64F70300D469EF /* RecordWave */,
+				913466702C678509005A8B04 /* Attachments */,
+				91A080942C64F70300D469EF /* Recordings */,
 			);
 			path = MessageView;
 			sourceTree = "<group>";
@@ -464,13 +475,13 @@
 			path = InputView;
 			sourceTree = "<group>";
 		};
-		91A080942C64F70300D469EF /* RecordWave */ = {
+		91A080942C64F70300D469EF /* Recordings */ = {
 			isa = PBXGroup;
 			children = (
 				91A080952C64F71200D469EF /* RecordWaveView.swift */,
 				91A080972C64F73500D469EF /* RecordingPlayer.swift */,
 			);
-			path = RecordWave;
+			path = Recordings;
 			sourceTree = "<group>";
 		};
 		91BEDD312C58FBA1000B99F8 /* HW15 */ = {
@@ -667,6 +678,7 @@
 				91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */,
 				91A0809E2C6656F600D469EF /* ChatViewModel.swift in Sources */,
 				91524E8E2C3BFA22005EC33D /* AnyTransition+Extensions.swift in Sources */,
+				913466722C67856B005A8B04 /* AttachmentImageView.swift in Sources */,
 				913AE74C2C3FC4B5005A0337 /* RegistrationScreen.swift in Sources */,
 				91524E8C2C3BF90E005EC33D /* OTPEnteringScreen.swift in Sources */,
 				9125959D2C1D7F9B0053D7FC /* UIApplication+Extensions.swift in Sources */,
