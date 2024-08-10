@@ -9,7 +9,7 @@ import SwiftUI
 import UISystem
 import ExyteChat
 
-extension CustomInputView {
+extension ChatInputView {
     private enum Constants {
         static var replyLineLimit: Int = 1
 
@@ -22,7 +22,7 @@ extension CustomInputView {
     }
 }
 
-struct CustomInputView: View {
+struct ChatInputView: View {
     @Binding var text: String
     
     let attachments: InputViewAttachments
@@ -70,7 +70,7 @@ struct CustomInputView: View {
     }
 }
 
-extension CustomInputView {
+extension ChatInputView {
     @ViewBuilder
     private var replyContent: some View {
         if let reply = attachments.replyMessage {

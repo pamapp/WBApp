@@ -64,7 +64,7 @@ extension PersonalChatView {
         inputViewActionClosure: @escaping (InputViewAction) -> Void,
         dismissKeyboardClosure: ()->()
     ) -> some View {
-        CustomInputView(
+        ChatInputView(
             text: textBinding,
             attachments: attachments,
             inputViewStyle: inputViewStyle,

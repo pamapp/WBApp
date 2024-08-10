@@ -62,7 +62,7 @@
 		9188BD1B2C35EFFF000DB4A7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */; };
 		919699E12C623E2A0028528E /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = 919699E02C623E2A0028528E /* ExyteChat */; };
 		919699E62C623E580028528E /* PersonalChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E52C623E580028528E /* PersonalChatView.swift */; };
-		919699E82C623E600028528E /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E72C623E600028528E /* CustomInputView.swift */; };
+		919699E82C623E600028528E /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E72C623E600028528E /* ChatInputView.swift */; };
 		919699EA2C624DA10028528E /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919699E92C624DA10028528E /* ChatMessageView.swift */; };
 		91A080962C64F71300D469EF /* RecordWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A080952C64F71200D469EF /* RecordWaveView.swift */; };
 		91A080982C64F73500D469EF /* RecordingPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A080972C64F73500D469EF /* RecordingPlayer.swift */; };
@@ -154,7 +154,7 @@
 		9157F1872C25709A00CF0EC2 /* ChatsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsIntent.swift; sourceTree = "<group>"; };
 		9188BD1A2C35EFFF000DB4A7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		919699E52C623E580028528E /* PersonalChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalChatView.swift; sourceTree = "<group>"; };
-		919699E72C623E600028528E /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		919699E72C623E600028528E /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
 		919699E92C624DA10028528E /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
 		91A080952C64F71200D469EF /* RecordWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWaveView.swift; sourceTree = "<group>"; };
 		91A080972C64F73500D469EF /* RecordingPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPlayer.swift; sourceTree = "<group>"; };
@@ -449,14 +449,14 @@
 			isa = PBXGroup;
 			children = (
 				919699E52C623E580028528E /* PersonalChatView.swift */,
-				919699EB2C6392B50028528E /* MessageView */,
-				919699EC2C6392C30028528E /* InputView */,
+				919699EB2C6392B50028528E /* Message */,
+				919699EC2C6392C30028528E /* Input */,
 				9134666F2C66B4FA005A8B04 /* ViewModel */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
 		};
-		919699EB2C6392B50028528E /* MessageView */ = {
+		919699EB2C6392B50028528E /* Message */ = {
 			isa = PBXGroup;
 			children = (
 				919699E92C624DA10028528E /* ChatMessageView.swift */,
@@ -464,15 +464,15 @@
 				913466702C678509005A8B04 /* Attachments */,
 				91A080942C64F70300D469EF /* Recordings */,
 			);
-			path = MessageView;
+			path = Message;
 			sourceTree = "<group>";
 		};
-		919699EC2C6392C30028528E /* InputView */ = {
+		919699EC2C6392C30028528E /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				919699E72C623E600028528E /* CustomInputView.swift */,
+				919699E72C623E600028528E /* ChatInputView.swift */,
 			);
-			path = InputView;
+			path = Input;
 			sourceTree = "<group>";
 		};
 		91A080942C64F70300D469EF /* Recordings */ = {
@@ -673,7 +673,7 @@
 				91EB7E142C36B62F00D8C23E /* VerificationScreen.swift in Sources */,
 				9126C1F52C4E60E800DC3E5F /* Intents.intentdefinition in Sources */,
 				912595802C1CDD650053D7FC /* Router.swift in Sources */,
-				919699E82C623E600028528E /* CustomInputView.swift in Sources */,
+				919699E82C623E600028528E /* ChatInputView.swift in Sources */,
 				91EB7E0A2C36AFD200D8C23E /* DateProvider.swift in Sources */,
 				91EB7E0B2C36AFD200D8C23E /* DatesScreen.swift in Sources */,
 				91A0809E2C6656F600D469EF /* ChatViewModel.swift in Sources */,
