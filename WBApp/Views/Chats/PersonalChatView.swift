@@ -1,3 +1,10 @@
+//
+//  PersonalChatView.swift
+//  WBApp
+//
+//  Created by Alina Potapova on 05.08.2024.
+//
+
 import SwiftUI
 import UISystem
 import ExyteChat
