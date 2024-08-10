@@ -8,7 +8,7 @@
 import SwiftUI
 import ExyteChat
 
-final class ChatVM: ObservableObject {
+final class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = TestData.messages
         
     func send(draft: DraftMessage) async {

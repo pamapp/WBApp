@@ -11,9 +11,9 @@ import ExyteChat
 
 struct PersonalChatView: View {
     @FocusState private var isInputFocused: Bool
-    @StateObject private var vm: ChatVM
+    @StateObject private var vm: ChatViewModel
     
-    init(vm: ChatVM = ChatVM()) {
+    init(vm: ChatViewModel = ChatViewModel()) {
         _vm = StateObject(wrappedValue: vm)
     }
     
