@@ -164,7 +164,7 @@ extension ChatMessageView {
     @ViewBuilder
     private var recordingView: some View {
         if let recording = message.recording {
-            RecordWaveformWithButtons(
+            RecordWaveView(
                 recording: recording,
                 colorButton: message.user.isCurrentUser ? Color.white : Color.theme.active,
                 colorWaveform: message.user.isCurrentUser ? Color.white : Color.theme.active

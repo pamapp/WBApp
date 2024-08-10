@@ -1,5 +1,5 @@
 //
-//  RecordWaveform.swift
+//  RecordWaveView.swift
 //
 //
 //  Created by Alisa Mylnikova on 14.03.2023.
@@ -11,7 +11,7 @@ import ExyteChat
 
 // MARK: Не public код из библиотеки ExyteChat. Был отредактирован в соотвествии с дизайн-макетом.
 
-struct RecordWaveformWithButtons: View {
+struct RecordWaveView: View {
     @StateObject var recordPlayer = RecordingPlayer()
     
     var recording: Recording
@@ -40,7 +40,7 @@ struct RecordWaveformWithButtons: View {
     }
 }
 
-extension RecordWaveformWithButtons {
+extension RecordWaveView {
 
     @ViewBuilder
     private var buttonView: some View {
