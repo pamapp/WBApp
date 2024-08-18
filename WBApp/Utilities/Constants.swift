@@ -25,6 +25,11 @@ enum UI {
         static var invalidCode: String { localizedString(for: .invalidCode) }
         static var codeExpired: String { localizedString(for: .codeExpired) }
         
+        static var send: String { localizedString(for: .send) }
+        static var sending: String { localizedString(for: .sending) }
+        static var read: String { localizedString(for: .read) }
+        static var error: String { localizedString(for: .error) }
+
         static func localizedString(for key: LocalizationKeys) -> String {
             return key.rawValue.localized
         }
@@ -39,6 +44,11 @@ enum UI {
         static let search: String = "search"
         static let plus: String = "plus"
         static let back: String = "chevron.left"
+        static let mic: String = "mic"
+        static let paperplane: String = "paperplane"
+        static let lines: String = "lines"
+        static let pauseAudio: String = "pauseAudio"
+        static let playAudio: String = "playAudio"
     }
     
     enum Brands {

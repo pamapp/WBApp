@@ -25,4 +25,9 @@ enum LocalizationKeys: String {
     case after
     case invalidCode
     case codeExpired
+    
+    case send
+    case sending
+    case read
+    case error
 }
