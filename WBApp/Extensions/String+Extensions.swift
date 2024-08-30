@@ -49,3 +49,9 @@ extension String {
         return formattedNumber
     }
 }
+
+extension String {
+    var localized: String {
+        NSLocalizedString(self, comment: self)
+    }
+}

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 extension View {
     public func tabBarShadow() -> some View {
@@ -20,8 +21,8 @@ extension View {
 }
 
 extension View {
-    func countryPickerStyle(containerSize: CGSize, selectedCountry: String) -> some View {
-        self.modifier(CountryPickerStyle(containerSize: containerSize, selectedCountry: selectedCountry))
+    func countryPickerStyle(height: CGFloat, flag: String, code: String) -> some View {
+        self.modifier(CountryPickerStyle(height: height, flag: flag, code: code))
     }
 }
 
